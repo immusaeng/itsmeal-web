@@ -971,3 +971,11 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .marquee__track li { min-width: 0; height: 64px; padding: 0 clamp(22px, 2.6vw, 40px); border: 0; border-radius: 0; background: none; }
 .marquee__track li img { height: 40px; width: auto; max-width: 150px; object-fit: contain; display: block; }
 .marquee__track li.is-txt { font-size: 24px; font-weight: 800; letter-spacing: -.04em; color: var(--ink-soft); }
+
+/* 브랜드 띠: 보조 위계 — 더 좁고 작게 */
+.brandBand { padding: 14px 0 12px; }
+.brandBand__head { margin-bottom: 8px; gap: 2px 14px; }
+.brandBand__k { font-size: 11px; }
+.brandBand__t { font-size: clamp(15px, 1.4vw, 18px); }
+.marquee__track li { height: 40px; padding: 0 clamp(16px, 1.8vw, 26px); }
+.marquee__track li img { height: 24px; max-width: 90px; }
