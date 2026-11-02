@@ -105,11 +105,22 @@ const DW_MONTHS = [
 /* 카탈로그 · 서류 페이지용 문서 목록 — 월별로 자동 그룹핑 */
 const DW_DOCS = [
   { id: 'recipe-10', month: '2026-10', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 10월 · 애호박채덕전', pages: 1, cover: 'assets/dw/recipe-10-1.jpg' },
+  { id: 'kium-10', month: '2026-10', kind: '이미지', title: '키움 돌봄센터 간식 상품 소개서', sub: '2026년 10월 · 간식 식단 소개', pages: 1, cover: 'assets/dw/kium-10.jpg' },
   { id: 'recipe-09', month: '2026-09', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 9월 · 치킨 새콤 샌드위치', pages: 1, cover: 'assets/dw/recipe-09-1.jpg' },
   { id: 'menu-09', month: '2026-09', kind: '이미지', title: '키즈 통합 식단표', sub: '2026년 9월 · 점심 및 간식', pages: 1, cover: 'assets/dw/menu-09.jpg' },
   { id: 'recipe-08', month: '2026-08', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 8월 · 돈장조림버터밥전', pages: 1, cover: 'assets/dw/recipe-08-1.jpg' },
   { id: 'kium-08', month: '2026-08', kind: '이미지', title: '키움 돌봄센터 간식 상품 소개서', sub: '2026년 8월 · 간식 식단 소개', pages: 1, cover: 'assets/dw/kium-08.jpg' },
+  { id: 'recipe-07', month: '2026-07', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 7월 · 수제두부피자', pages: 1, cover: 'assets/dw/recipe-07-1.jpg' },
+  { id: 'kium-07', month: '2026-07', kind: '이미지', title: '키움 돌봄센터 간식 상품 소개서', sub: '2026년 7월 · 간식 식단 소개', pages: 1, cover: 'assets/dw/kium-07.jpg' },
   { id: 'recipe-06', month: '2026-06', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 6월 · 모닝방게란방', pages: 1, cover: 'assets/dw/recipe-06.jpg' },
+  { id: 'kium-06', month: '2026-06', kind: '이미지', title: '키움 돌봄센터 간식 상품 소개서', sub: '2026년 6월 · 간식 식단 소개', pages: 1, cover: 'assets/dw/kium-06.jpg' },
+  { id: 'recipe-05', month: '2026-05', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 5월 · 제주식 고기국수', pages: 1, cover: 'assets/dw/recipe-05-1.jpg' },
+  { id: 'kium-05', month: '2026-05', kind: '이미지', title: '키움 돌봄센터 간식 상품 소개서', sub: '2026년 5월 · 간식 식단 소개', pages: 1, cover: 'assets/dw/kium-05.jpg' },
+  { id: 'recipe-04', month: '2026-04', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 4월 · 소세지묵은지꼬마김밥', pages: 1, cover: 'assets/dw/recipe-04-1.jpg' },
+  { id: 'recipe-03', month: '2026-03', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 3월 · 오꼬노미야끼', pages: 1, cover: 'assets/dw/recipe-03-1.jpg' },
+  { id: 'leaflet-03', month: '2026-03', kind: '이미지', title: '동원이팜 이달의 간식 상품 소개 리플렛', sub: '2026년 3월 · 이달의 상품 소개', pages: 1, cover: 'assets/dw/leaflet-03.jpg' },
+  { id: 'recipe-02', month: '2026-02', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 2월 · 새우크림리조또', pages: 1, cover: 'assets/dw/recipe-02-1.jpg' },
+  { id: 'recipe-01', month: '2026-01', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 1월 · 베이컨감자채전', pages: 1, cover: 'assets/dw/recipe-01-1.jpg' },
 ];
 
 window.DW_MONTHS = DW_MONTHS;
