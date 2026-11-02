@@ -989,3 +989,6 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .cat__img img { width: 100%; height: 100%; object-fit: cover; object-position: right center; display: block; }
 .cat__t { margin-top: 10px; font-size: 16px; font-weight: 800; letter-spacing: -.02em; }
 @media (max-width: 760px) { .catGrid { grid-template-columns: 1fr 1fr; } .cat__t { font-size: 14.5px; } }
+.consentMore { margin: 6px 0 0 28px; font-size: 13px; color: var(--muted); }
+.consentMore summary { cursor: pointer; display: inline-block; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.consentMore p { margin: 8px 0 0; line-height: 1.65; }
