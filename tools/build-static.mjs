@@ -18,6 +18,8 @@ const SITE = {
   phone: '010-7656-0301',
   phoneHref: 'tel:01076560301',
   email: 'contact@itsmeal.co.kr',
+  // 푸터 사업자 표기(운영자가 공개를 승인한 항목만: 상호·사업자등록번호·영업신고)
+  biz: '상호 이츠밀 · 사업자등록번호 193-23-02385 · 영업신고 제2026-0325042호 (식품소분·판매업, 집단급식소 식품판매업)',
   nav: [
     { href: '/promise', label: '네 가지 약속', key: 'promise' },
     { href: '/menu', label: '이달의 식단', key: 'menu' },
@@ -88,9 +90,10 @@ const foot = () => `
         </ul>
       </div>
     </div>
+    <p class="foot__biz">${SITE.biz}</p>
     <div class="foot__bar">
       <span>이츠밀 · it's meal &nbsp;|&nbsp; 동원홈푸드 공식 파트너</span>
-      <span><a href="/privacy">개인정보 처리방침</a> &nbsp;|&nbsp; © 2026 Eats Mil. All rights reserved.</span>
+      <span><a href="/privacy">개인정보 처리방침</a> &nbsp;|&nbsp; © 2026 it's meal. All rights reserved.</span>
     </div>
   </div>
 </footer>

@@ -854,3 +854,6 @@ a.dirRow:hover .dir__t { color: var(--green); }
 
 /* 월 탭 필터 */
 .doc[hidden] { display: none; }
+
+/* 푸터 사업자 표기 */
+.foot__biz { margin: 0; padding-top: 22px; font-size: 13px; line-height: 1.7; color: rgba(250,248,243,.62); }
