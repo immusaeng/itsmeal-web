@@ -906,3 +906,22 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .way--main .way__v { font-size: clamp(26px, 3vw, 34px); letter-spacing: -.02em; }
 .way--main .way__t { font-size: 14px; color: rgba(250,248,243,.78); }
 .way--sub .way__v { font-size: 17px; opacity: .9; }
+
+/* ── 모바일 하단 내비게이션 바 ───────────────────────────────── */
+.mbar { display: none; }
+@media (max-width: 767px) {
+  .mbar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+    display: grid; grid-template-columns: 1fr 1.25fr 1fr 1.45fr; align-items: stretch;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); gap: 6px;
+    background: rgba(255, 253, 249, .96); -webkit-backdrop-filter: saturate(180%) blur(16px); backdrop-filter: saturate(180%) blur(16px);
+    border-top: 1px solid var(--line-soft); box-shadow: 0 -14px 30px -24px rgba(20, 37, 28, .45);
+    transition: transform .3s var(--ease-out);
+  }
+  .mbar.is-hidden { transform: translateY(110%); }
+  .mbar a { display: grid; justify-items: center; align-content: center; gap: 3px; min-height: 52px; border-radius: 12px; font-size: 12px; font-weight: 800; letter-spacing: -.02em; color: var(--ink-soft); }
+  .mbar svg { width: 21px; height: 21px; }
+  .mbar a.is-active { color: var(--green-deep); background: var(--green-mist); }
+  .mbar .mbar__cta { background: var(--green); color: var(--ivory); }
+  body { padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
+}

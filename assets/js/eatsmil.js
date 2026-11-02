@@ -226,7 +226,20 @@ function initHeroLoad() {
 }
 
 /* ── 부팅 ──────────────────────────────────────────────────────────── */
+/* ── 모바일 하단 바: 상담 폼이 화면에 있으면 숨기고, 현재 지면 표시 ─────── */
+function initMbar() {
+  const bar = document.getElementById('mbar')
+  if (!bar) return
+  const here = location.pathname.replace(//$/, '') || '/'
+  bar.querySelectorAll('a').forEach(a => { if ((a.getAttribute('href') || '') === here) a.classList.add('is-active') })
+  const form = document.getElementById('contact')
+  if (form && 'IntersectionObserver' in window) {
+    new IntersectionObserver(es => es.forEach(e => bar.classList.toggle('is-hidden', e.isIntersecting)), { threshold: 0.25 }).observe(form)
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initMbar()
   const nav = initNav()
   if (nav) initNavState(nav)
   initReveal()

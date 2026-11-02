@@ -27,7 +27,7 @@ const SITE = {
   addr: '전남광주통합특별시 광산구 첨단중앙로124번길',
   nav: [
     {
-      href: '/archive#field', label: '현장 자료', key: 'resources',
+      href: '/resources', label: '급식 자료실', key: 'resources',
       children: [
         { href: '/resource-season', label: '제철 도감', desc: '이달에 쓰기 좋은 채소·수산물' },
         { href: '/resource-hygiene-check', label: '위생관리 점검표', desc: 'A4 한 장, 매일 쓰는 점검표' },
@@ -50,6 +50,7 @@ const PAGES = {
   '404.html': ['nav', 'foot'],
   'menu.html': ['nav', 'foot', 'm-full', 'm-week', 'm-key', 'wk-board'],
   'archive.html': ['nav', 'foot', 'arc-tabs', 'arc-grid'],
+  'resources.html': ['nav', 'foot'],
   'resource-season.html': ['nav', 'foot', 'season-veg', 'season-sea'],
   'resource-hygiene-check.html': ['nav', 'foot'],
   'resource-hygiene-tips.html': ['nav', 'foot'],
@@ -99,6 +100,13 @@ const sheetItems = () => SITE.nav.map(n => n.children
   ? `<span class="navSheet__h">${n.label}</span>${n.children.map(c => `<a class="navSheet__c" href="${c.href}">${c.label}</a>`).join('')}`
   : `<a href="${n.href}">${n.label}</a>`).join('')
 const flatNav = () => SITE.nav.flatMap(n => n.children ? n.children : [n])
+const mbar = () => `<nav class="mbar" id="mbar" aria-label="빠른 메뉴">
+  <a href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>홈</span></a>
+  <a href="/resources"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span>급식 자료실</span></a>
+  <a href="${SITE.phoneHref}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>전화</span></a>
+  <a class="mbar__cta" href="/#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/></svg><span>상담 신청</span></a>
+</nav>
+`
 const nav = (active, dark) => `
 <header class="nav${dark ? ' is-dark' : ''}" id="siteNav">
   <div class="nav__in">
@@ -112,7 +120,7 @@ const nav = (active, dark) => `
   </div>
 </header>
 <div class="navSheet">${sheetItems()}<a href="/#contact">상담 신청</a></div>
-`
+${mbar()}`
 
 const foot = () => `
 <footer class="foot">
