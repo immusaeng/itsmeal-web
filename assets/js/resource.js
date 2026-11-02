@@ -278,10 +278,10 @@ function rsBindActions() {
       const url = location.origin + location.pathname + '?utm_source=share&utm_medium=button&utm_campaign=' + (document.body.dataset.page || 'resource')
       const data = { title: document.title, text: '급식 현장에서 바로 쓰는 자료예요.', url }
       if (navigator.share) {
-        try { await navigator.share(data) } catch (e) { /* 사용자가 공유 창을 닫음 */ }
+        try { await navigator.share(data); if (window.gaEvent) window.gaEvent('resource_share', { method: 'native' }) } catch (e) { /* 사용자가 공유 창을 닫음 */ }
         return
       }
-      try { await navigator.clipboard.writeText(url); rsToast('링크를 복사했습니다. 카톡이나 문자에 붙여 넣으세요.') }
+      try { await navigator.clipboard.writeText(url); if (window.gaEvent) window.gaEvent('resource_share', { method: 'copy' }); rsToast('링크를 복사했습니다. 카톡이나 문자에 붙여 넣으세요.') }
       catch (e) { rsToast('링크를 복사하지 못했습니다. 주소창의 주소를 공유해 주세요.', 3600) }
     })
   })
