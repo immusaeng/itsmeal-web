@@ -9,10 +9,10 @@ const SITE = {
   kakao: '#',
   email: 'contact@itsmeal.co.kr',
   nav: [
-    { href: 'story.html',   label: '브랜드 스토리', key: 'story' },
-    { href: 'promise.html', label: '네 가지 약속',  key: 'promise' },
-    { href: 'menu.html',    label: '이달의 식단',   key: 'menu' },
-    { href: 'archive.html', label: '카탈로그·서류',   key: 'archive' },
+    { href: '/promise', label: '네 가지 약속',  key: 'promise' },
+    { href: '/menu',    label: '이달의 식단',   key: 'menu' },
+    { href: '/story',   label: '브랜드 스토리', key: 'story' },
+    { href: '/archive', label: '카탈로그 · 서류', key: 'archive' },
   ],
 }
 
@@ -29,19 +29,19 @@ function buildNav(active) {
   nav.id = 'siteNav'
   nav.innerHTML = `
     <div class="nav__in">
-      <a class="nav__logo" href="index.html" aria-label="이츠밀 홈">
-        <img class="logo-navy" src="assets/logos/mil2-navy.svg" alt="이츠밀">
-        <img class="logo-white" src="assets/logos/mil2-white.svg" alt="" aria-hidden="true">
+      <a class="nav__logo" href="/" aria-label="이츠밀 홈">
+        <img class="logo-navy" src="/assets/logos/mil2-navy.svg" alt="이츠밀">
+        <img class="logo-white" src="/assets/logos/mil2-white.svg" alt="" aria-hidden="true">
       </a>
       <nav class="nav__menu">${links}</nav>
-      <a class="nav__cta" href="index.html#contact">상담 신청 ${arrowSVG}</a>
+      <a class="nav__cta" href="/#contact">상담 신청 ${arrowSVG}</a>
       <button class="nav__burger" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
     </div>`
 
   const sheet = document.createElement('div')
   sheet.className = 'navSheet'
   sheet.innerHTML = SITE.nav.map(n => `<a href="${n.href}">${n.label}</a>`).join('') +
-    `<a href="index.html#contact">상담 신청</a>`
+    `<a href="/#contact">상담 신청</a>`
 
   document.body.prepend(sheet)
   document.body.prepend(nav)
@@ -67,14 +67,14 @@ function buildFoot() {
     <div class="wrap">
       <div class="foot__top">
         <div>
-          <img class="foot__logo" src="assets/logos/mil2-white.svg" alt="이츠밀">
+          <img class="foot__logo" src="/assets/logos/mil2-white.svg" alt="이츠밀">
           <p class="foot__tag">아이들 밥상은 든든하게,<br>원장님의 운영 고민은 가볍게.</p>
         </div>
         <div>
           <h5>바로가기</h5>
           <ul>
             ${SITE.nav.map(n => `<li><a href="${n.href}">${n.label}</a></li>`).join('')}
-            <li><a href="index.html#contact">상담 · 견적 신청</a></li>
+            <li><a href="/#contact">상담 · 견적 신청</a></li>
           </ul>
         </div>
         <div>
@@ -126,6 +126,7 @@ function initCounters() {
     return
   }
 
+  els.forEach(el => { el.textContent = '0' }) // HTML에는 최종값이 들어 있고, 스크립트가 켜진 환경에서만 0부터 올라간다
   const pending = new Set(els)
   let ticking = false
   const check = () => {

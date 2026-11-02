@@ -840,3 +840,14 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .legal th, .legal td { text-align: left; vertical-align: top; padding: 12px 14px; border-top: 1px solid var(--line); min-width: 90px; }
 .legal thead th { border-top: 1.5px solid var(--ink); font-weight: 700; color: var(--ink); }
 .legal tbody tr:last-child td { border-bottom: 1px solid var(--line); }
+
+/* ── B1 핫픽스: 오류색·필수/선택 표시·준비 중 카드·작은 글씨 상향 ─────────── */
+:root { --err: #B3402A; }
+.field i.req { font-style: normal; font-weight: 600; color: var(--green); }
+.field i.opt { font-style: normal; font-weight: 400; color: var(--muted); }
+.field input.is-bad, .field select.is-bad, .field textarea.is-bad { border-color: var(--err); }
+.consent { font-size: 13.5px; }
+.formNote { font-size: 13px; }
+.doc.is-soon { cursor: default; }
+.doc.is-soon .doc__paper { position: relative; opacity: .72; }
+.doc__soon { position: absolute; top: 12px; right: 12px; z-index: 1; padding: 4px 10px; border-radius: 999px; background: var(--ink); color: var(--ivory); font-size: 13px; font-weight: 700; letter-spacing: -.01em; }

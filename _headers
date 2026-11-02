@@ -1,0 +1,17 @@
+# Cloudflare Pages 정적 헤더 설정 (wrangler 설정 파일이 아님)
+# 스타일·스크립트·데이터는 배포 즉시 반영되도록 매번 재검증한다(변경 없으면 304).
+/assets/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/data/*
+  Cache-Control: public, max-age=0, must-revalidate
+# 폰트는 거의 바뀌지 않는다. 파일명을 바꾸지 않고 교체하면 최대 7일 뒤 반영되니 교체 시 파일명을 바꿀 것.
+/assets/fonts/*
+  Cache-Control: public, max-age=604800
+
+# 기본 주소·미리보기 주소는 검색 색인 제외(실제 도메인 itsmeal.co.kr만 색인)
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
