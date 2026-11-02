@@ -405,7 +405,7 @@ async function rsBuildShot(which) {
     host.innerHTML = `
       <div class="capHead">
         <div>
-          <h3>현장에서 자주 틀리는 위생 10가지</h3>
+          <h3>현장에서 자주 놓치는 위생 10가지</h3>
           <p>현장에서 놓치기 쉬운 항목만 골랐습니다. 잘못된 예와 바꿔야 할 한 가지를 나란히 두었습니다.</p>
         </div>
         <div class="capHead__side">
