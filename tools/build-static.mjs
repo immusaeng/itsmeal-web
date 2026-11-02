@@ -115,7 +115,7 @@ const tabs = () => `
       `
 const cards = () => '\n' + DOCS.map(d => `      <div class="doc" data-month="${d.month}">
         <button class="doc__paper" data-zoom="${esc(abs(d.cover))}" data-title="${esc(d.title)}" style="border:0;padding:9px">
-          <img src="${esc(abs(d.cover))}" alt="${esc(d.title)}">
+          <img src="${esc(abs(d.cover))}" alt="${esc(d.title)}" loading="lazy" decoding="async">
           <span class="doc__zoom">크게 보기</span>
         </button>
         <div><div class="doc__k">${esc(d.title)}</div><div class="doc__d">${esc(d.sub)} · ${esc(d.kind)} ${d.pages}p</div></div>
