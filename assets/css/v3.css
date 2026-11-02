@@ -979,3 +979,5 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .brandBand__t { font-size: clamp(15px, 1.4vw, 18px); }
 .marquee__track li { height: 40px; padding: 0 clamp(16px, 1.8vw, 26px); }
 .marquee__track li img { height: 24px; max-width: 90px; }
+.marquee__track li { height: 36px; }
+.marquee__track li img { height: 21.6px; max-width: 81px; }
