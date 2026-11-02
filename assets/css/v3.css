@@ -925,3 +925,20 @@ a.dirRow:hover .dir__t { color: var(--green); }
   .mbar .mbar__cta { background: var(--green); color: var(--ivory); }
   body { padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
 }
+
+/* ── 고민 4칸: 이츠밀이 드리는 것 · FAQ · 자료 카드 설명 가독성 ───────────────── */
+.q4__give { display: grid; gap: 6px; margin: 16px 0 0; padding: 14px 16px; border-left: 3px solid var(--amber); background: var(--paper); border-radius: 0 10px 10px 0; font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); max-width: 46ch; }
+.q4__give > span { font-size: 11px; font-weight: 800; letter-spacing: .14em; color: var(--green); }
+.q4__give b { font-weight: 700; color: var(--ink); }
+.q4__give a { display: inline-flex; align-items: center; gap: 6px; margin-left: 8px; font-weight: 800; color: var(--green); white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
+.q4__give a svg { width: 13px; height: 13px; }
+.faq { border-top: 1.5px solid var(--ink); }
+.faq__i { border-bottom: 1px solid var(--line); }
+.faq__i summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: clamp(17px, 1.6vw, 20px); font-weight: 800; letter-spacing: -.02em; }
+.faq__i summary::-webkit-details-marker { display: none; }
+.faq__i summary::after { content: '+'; font-size: 24px; font-weight: 400; color: var(--green); transition: transform .3s var(--ease-out); }
+.faq__i[open] summary::after { transform: rotate(45deg); }
+.faq__i p { margin: 0; padding: 0 4px 24px; max-width: 62ch; font-size: 16px; line-height: 1.75; color: var(--ink-soft); }
+.dir__d { font-size: 15.5px; line-height: 1.65; color: var(--ink-soft); overflow: visible; white-space: normal; }
+.moreRow { display: flex; justify-content: center; margin-top: 28px; }
+.moreRow[hidden] { display: none; }

@@ -76,7 +76,7 @@
 <link rel="stylesheet" href="assets/css/home.css?v=a015efe0">
 <link rel="stylesheet" href="assets/css/cine.css?v=6cdbda81">
 <link rel="stylesheet" href="assets/css/sub.css?v=0b7fb41f">
-<link rel="stylesheet" href="assets/css/v3.css?v=98902c05">
+<link rel="stylesheet" href="assets/css/v3.css?v=ec2b89b9">
 <link rel="stylesheet" href="assets/css/resource.css?v=9a5ef493">
 </head>
 <body data-page="archive">
@@ -133,11 +133,11 @@
     <div class="secHead">
       <div class="secHead__t">
         <span class="lab" data-reveal>Monthly — 동원이팜</span>
-        <h2 data-reveal style="--d:70ms">매월 발행되는<br>식단표 · 레시피북.</h2>
+        <h2 data-reveal style="--d:70ms">이달의 식단표,<br>간식 소개, 레시피북.</h2>
       </div>
       <p class="secHead__a" data-reveal style="--d:140ms">
-        동원홈푸드·이팜키즈가 매월 새로 내는 원본 자료입니다.
-        원본을 눌러 크게 확인하실 수 있습니다. 필요한 자료는 상담 신청의 문의 내용에 적어 주세요.
+        매달 새로 나오는 동원이팜 자료를 최신 달부터 모았습니다.
+        눌러서 크게 확인하세요. 지난 달 자료도 더 볼 수 있습니다.
       </p>
     </div>
 
@@ -196,6 +196,7 @@
         <div><div class="doc__k">동원이팜 수제 간식 레시피 BOOK</div><div class="doc__d">2026년 6월 · 모닝방게란방 · 이미지 1p</div></div>
       </div>
     <!--/gen:arc-grid--></div>
+    <div class="moreRow" id="arcMoreRow"><button class="btn btn--ghost" id="arcMore" type="button">지난 달 자료 더 보기</button></div>
   </div>
 </section>
 
@@ -311,12 +312,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.getElementById('arcTabs')
   const cards = [...document.querySelectorAll('#arcGrid > .doc')]
   if (!tabs) return
+  const MAX = 3, more = document.getElementById('arcMore'), moreRow = document.getElementById('arcMoreRow')
+  let cur = 'all', expanded = false
+  const render = () => {
+    cards.forEach((d, i) => { d.hidden = (cur !== 'all' && d.dataset.month !== cur) || (cur === 'all' && !expanded && i >= MAX) })
+    if (moreRow) moreRow.hidden = !(cur === 'all' && !expanded && cards.length > MAX)
+  }
+  if (more) more.addEventListener('click', () => { expanded = true; render() })
+  render()
 
   tabs.addEventListener('click', e => {
     const b = e.target.closest('.monthTab')
     if (!b) return
     tabs.querySelectorAll('.monthTab').forEach(x => x.classList.toggle('on', x === b))
-    cards.forEach(d => { d.hidden = b.dataset.m !== 'all' && d.dataset.month !== b.dataset.m })
+    cur = b.dataset.m; render()
   })
 
   const lb = document.getElementById('lightbox')
