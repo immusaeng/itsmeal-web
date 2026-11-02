@@ -981,3 +981,11 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .marquee__track li img { height: 24px; max-width: 90px; }
 .marquee__track li { height: 36px; }
 .marquee__track li img { height: 21.6px; max-width: 81px; }
+
+/* ── 상품 카테고리(이팜키즈·be chef.) ───────────────────────────── */
+.catH { margin: 34px 0 14px; font-family: var(--serif); font-size: clamp(18px, 2vw, 24px); font-weight: 600; letter-spacing: -.03em; }
+.catGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.6vw, 22px); }
+.cat__img { aspect-ratio: 62 / 40; overflow: hidden; border-radius: 8px; background: var(--band); }
+.cat__img img { width: 100%; height: 100%; object-fit: cover; object-position: right center; display: block; }
+.cat__t { margin-top: 10px; font-size: 16px; font-weight: 800; letter-spacing: -.02em; }
+@media (max-width: 760px) { .catGrid { grid-template-columns: 1fr 1fr; } .cat__t { font-size: 14.5px; } }
