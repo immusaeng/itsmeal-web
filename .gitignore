@@ -1,0 +1,4 @@
+.local/
+.wrangler/
+.DS_Store
+Thumbs.db

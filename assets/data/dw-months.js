@@ -1,0 +1,116 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   동원홈푸드 월별 자료 — 데이터 소스
+   ---------------------------------------------------------------------
+   동원홈푸드/이팜키즈는 매월 식단표·간식 소개·레시피북을 갱신합니다.
+   새 달 자료가 오면 아래 MONTHS 배열 맨 앞에 한 블록만 추가하면
+   홈 · 이달의 식단 · 자료실이 동시에 갱신됩니다.
+
+   필드 설명
+   - id        : 정렬·URL 해시에 쓰는 키 ('2026-11')
+   - label     : 화면 표기 ('11월')
+   - full      : 긴 표기 ('2026년 11월')
+   - current   : true면 '이번 달' 배지
+   - menu      : 통합 식단표 (요일별 오전간식/점심/오후간식)
+   - menuDoc   : 통합 식단표 원본 이미지 (없으면 null)
+   - snacks    : 간식 상품 소개 (품목·상품코드·알레르기·열량)
+   - snackDoc  : 간식 소개서 원본 이미지
+   - recipe    : 수제 간식 레시피북 { name, img }
+   - note      : 해당 월 특이사항
+   ═══════════════════════════════════════════════════════════════════════ */
+
+const DW_MONTHS = [
+  {
+    id: '2026-11',
+    label: '11월',
+    full: '2026년 11월',
+    current: true,
+    weekLabel: '첫째 주', // 이 달 menu가 담고 있는 주차
+    note: '동원이팜 간식 식단표 · 매주 월~금 요일별 구성',
+    menuDoc: 'assets/web/dw-snack-nov.jpg',
+    menu: [
+      { d: 'MON', am: '참치마요구운주먹밥', rice: '현미밥', soup: '미역국', side: '닭갈비 · 콩나물무침 · 계란말이', pm: '리얼브레제주강줄스' },
+      { d: 'TUE', am: '제철 과일', rice: '잡곡밥', soup: '육개장', side: '계란찜 · 시금치나물 · 멸치볶음', pm: '오프토딸기마요를래' },
+      { d: 'WED', am: '슈크림팬케이크', rice: '치즈김밥', soup: '어묵국', side: '어묵볶음 · 단무지 · 샐러드', pm: '애터미어스무디요거트' },
+      { d: 'THU', am: '새하얀구운란', rice: '카레라이스', soup: '된장국', side: '두부조림 · 양배추샐러드 · 오이무침', pm: '데믹크런치요구르트' },
+      { d: 'FRI', am: '샤카피자데리야끼치즈', rice: '흑미밥', soup: '된장국', side: '불고기 · 숙주나물 · 김구이', pm: '데믹크런치요구르트' },
+    ],
+    snacks: [
+      { name: '미숫가루우유', brand: '동원 · 덴마크', spec: '300mL', code: '194523', allergy: '2, 5', kcal: '190Kcal / 5g' },
+      { name: '하루야채', brand: '애치와이 · 켈로우', spec: '200mL', code: '181955', allergy: '12', kcal: '70Kcal / 2g' },
+      { name: '클래식소시지빵', brand: '아티제', spec: '70g', code: '194549', allergy: '1,2,5,6,12,15,16,18(굴)', kcal: '205Kcal / 6g' },
+    ],
+    snackDoc: 'assets/web/dw-snack-oct.jpg',
+    recipe: null,
+  },
+  {
+    id: '2026-10',
+    label: '10월',
+    full: '2026년 10월',
+    note: '10월의 추천 간식 · 「애호박채덕전」',
+    menuDoc: null,
+    menu: null,
+    snacks: [
+      { name: '미숫가루우유', brand: '동원 · 덴마크', spec: '300mL', code: '194523', allergy: '2, 5', kcal: '190Kcal / 5g' },
+      { name: '하루야채', brand: '애치와이', spec: '200mL', code: '181955', allergy: '12', kcal: '70Kcal / 2g' },
+      { name: '클래식소시지빵', brand: '아티제', spec: '70g', code: '194549', allergy: '1,2,5,6,12,15,16,18(굴)', kcal: '205Kcal / 6g' },
+    ],
+    snackDoc: 'assets/web/dw-snack-oct.jpg',
+    recipe: { name: '애호박채덕전', img: 'assets/dw/recipe-10-1.jpg' },
+  },
+  {
+    id: '2026-09',
+    label: '9월',
+    full: '2026년 9월',
+    note: '키즈 통합 식단표 · 오전간식 / 점심 / 오후간식 2회',
+    menuDoc: 'assets/dw/menu-09.jpg',
+    menu: [
+      { d: 'MON', am: '흰죽 · 귀리닭가슴살죽', rice: '보리밥', soup: '시래기된장국', side: '표고소불고기 · 오이볶음 · 배추김치', pm: '브로콜리소고기유부초밥' },
+      { d: 'TUE', am: '크래미양배추죽', rice: '차조밥', soup: '맑은청경채국', side: '소고기마늘종굴소스볶음 · 어묵볶음 · 열무김치', pm: '햄치즈김가루주먹밥' },
+      { d: 'WED', am: '김치콩나물죽', rice: '잡곡밥', soup: '맑은해물순두부국', side: '취나물소고기볶음 · 느타리당근볶음 · 배추김치', pm: '수제약밥' },
+      { d: 'THU', am: '흑임자죽', rice: '퀴노아밥', soup: '들깨무챗국', side: '소고기단호박찜 · 아욱나물 · 배추김치', pm: '잡채덮밥' },
+      { d: 'FRI', am: '단호박죽', rice: '차조밥', soup: '미역국', side: '닭갈비 · 콩나물무침 · 계란말이', pm: '제철 과일 · 요거트' },
+    ],
+    snacks: [],
+    snackDoc: 'assets/dw/menu-09.jpg',
+    recipe: { name: '치킨 새콤 샌드위치', img: 'assets/dw/recipe-09-1.jpg' },
+  },
+  {
+    id: '2026-08',
+    label: '8월',
+    full: '2026년 8월',
+    note: '키움 돌봄센터 간식 상품 소개서 · 간식 식단 소개',
+    menuDoc: null,
+    menu: null,
+    snacks: [
+      { name: '초당옥수수크림소보루', brand: '삼립', spec: '105g', code: '194302', allergy: '1, 2, 5, 6', kcal: '375Kcal / 6g' },
+      { name: '불고기크림브리또', brand: '남향푸드', spec: '125g', code: '153139', allergy: '2, 5, 6, 15, 16', kcal: '310Kcal / 13g' },
+      { name: '고소한치즈떡볶이', brand: '동원 · 덴마크', spec: '160g', code: '165425', allergy: '1,2,5,6,12,15,16', kcal: '390Kcal / 6g' },
+    ],
+    snackDoc: 'assets/dw/kium-08.jpg',
+    recipe: { name: '돈장조림버터밥전', img: 'assets/dw/recipe-08-1.jpg' },
+  },
+  {
+    id: '2026-06',
+    label: '6월',
+    full: '2026년 6월',
+    note: '6월의 추천 간식 · 「모닝방게란방」',
+    menuDoc: null,
+    menu: null,
+    snacks: [],
+    snackDoc: null,
+    recipe: { name: '모닝방게란방', img: 'assets/dw/recipe-06.jpg' },
+  },
+];
+
+/* 자료실용 문서 목록 — 월별로 자동 그룹핑 */
+const DW_DOCS = [
+  { id: 'recipe-10', month: '2026-10', kind: 'PDF', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 10월 · 애호박채덕전', size: '8.5 MB', pages: 2, cover: 'assets/dw/recipe-10-1.jpg' },
+  { id: 'recipe-09', month: '2026-09', kind: 'PDF', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 9월 · 치킨 새콤 샌드위치', size: '5.1 MB', pages: 3, cover: 'assets/dw/recipe-09-1.jpg' },
+  { id: 'menu-09', month: '2026-09', kind: 'PDF', title: '키즈 통합 식단표', sub: '2026년 9월 · 점심 및 간식', size: '330 KB', pages: 1, cover: 'assets/dw/menu-09.jpg' },
+  { id: 'recipe-08', month: '2026-08', kind: 'PDF', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 8월 · 돈장조림버터밥전', size: '8.8 MB', pages: 3, cover: 'assets/dw/recipe-08-1.jpg' },
+  { id: 'kium-08', month: '2026-08', kind: 'PDF', title: '키움 돌봄센터 간식 상품 소개서', sub: '2026년 8월 · 간식 식단 소개', size: '13.4 MB', pages: 1, cover: 'assets/dw/kium-08.jpg' },
+  { id: 'recipe-06', month: '2026-06', kind: 'PDF', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 6월 · 모닝방게란방', size: '6.3 MB', pages: 2, cover: 'assets/dw/recipe-06.jpg' },
+];
+
+window.DW_MONTHS = DW_MONTHS;
+window.DW_DOCS = DW_DOCS;

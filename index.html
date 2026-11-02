@@ -1,13 +1,363 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-nav-dark="false">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>이츠밀 | 아동시설 전문 식자재 파트너</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이츠밀 — 약속한 날에, 약속한 가격으로</title>
+<meta name="description" content="어린이집·유치원·돌봄센터·지역아동센터 전문 식자재 파트너 이츠밀. 동원홈푸드 공식 파트너. 지정후원 정시 집행, 단가 안정, 아이 맞춤 식단·간식, 서류·전산까지 네 가지 약속.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://itsmeal.co.kr/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="이츠밀">
+<meta property="og:title" content="이츠밀 — 약속한 날에, 약속한 가격으로">
+<meta property="og:description" content="어린이집·유치원·돌봄센터·지역아동센터 전문 식자재 파트너 이츠밀. 동원홈푸드 공식 파트너. 지정후원 정시 집행, 단가 안정, 아이 맞춤 식단·간식, 서류·전산까지 네 가지 약속.">
+<meta property="og:url" content="https://itsmeal.co.kr/">
+<meta property="og:image" content="https://itsmeal.co.kr/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/eatsmil.css?v=12">
+<link rel="stylesheet" href="assets/css/home.css?v=12">
+<link rel="stylesheet" href="assets/css/cine.css?v=13">
+<link rel="stylesheet" href="assets/css/sub.css?v=12">
+<link rel="stylesheet" href="assets/css/v3.css?v=1">
 </head>
-<body style="font-family:sans-serif;text-align:center;padding:80px 20px;">
-<h1>이츠밀</h1>
-<p>어린이집 · 유치원 · 돌봄센터 전문 식자재 파트너</p>
-<p>홈페이지 준비 중입니다. 문의: its_meal@naver.com</p>
+<body data-page="home">
+
+<!-- ═══ HERO ══════════════════════════════════════════════════════ -->
+<section class="hero3" data-hero>
+  <div class="hero3__copy">
+    <span class="partner" data-cine>
+      <img src="assets/logos/dongwon-homefood-blue.svg" alt="동원홈푸드">
+      <span class="partner__txt">공식 파트너</span>
+    </span>
+
+    <h1>
+      <span class="ln" data-cine-line>약속한 날에,</span>
+      <span class="ln" data-cine-line>약속한 <em>가격</em>으로.</span>
+    </h1>
+
+    <p class="hero3__sub" data-cine>
+      아이들 밥상은 든든하게, 원장님의 운영 고민은 가볍게.
+      지정후원 집행부터 단가·공급, 식단·간식, 서류까지 네 가지 약속으로 답합니다.
+    </p>
+
+    <div class="hero3__acts" data-cine>
+      <a class="btn btn--primary" href="#contact">
+        상담 · 견적 신청
+        <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="#contents">지면 안내</a>
+    </div>
+
+    <div class="hero3__facts" data-cine>
+      <div class="hero3__fact">
+        <span class="hero3__v">7<em>일</em></span>
+        <span class="hero3__k">매월 마감 후<br>집행까지</span>
+      </div>
+      <div class="hero3__fact">
+        <span class="hero3__v">500<em>여 종</em></span>
+        <span class="hero3__k">시설 맞춤<br>자체 PB</span>
+      </div>
+      <div class="hero3__fact">
+        <span class="hero3__v">18,000<em>여 종</em></span>
+        <span class="hero3__k">전국<br>소싱 규모</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero3__photo">
+    <img src="assets/web/hero-kids-v3.png" alt="햇살 드는 어린이집 식사 시간, 파스텔 식판으로 점심을 먹는 아이들" fetchpriority="high" data-hero-media>
+    <span class="hero3__tag" data-cine><span>어린이집</span><i></i><span>유치원</span><i></i><span>돌봄센터</span><i></i><span>지역아동센터</span></span>
+    <a class="hero3__float" href="menu.html" data-cine>
+      <span class="k">이달의 식단</span>
+      <span class="v">1식 · 1국 · 4찬<br>1간식</span>
+      <span class="d" id="floatMonth">11월 식단표 보기</span>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ 신뢰 띠 ═══════════════════════════════════════════════════ -->
+<div class="trustBar">
+  <div class="wrap trustBar__in">
+    <span class="trustBar__lab">함께 쓰는 브랜드</span>
+    <div class="trustBar__logos">
+      <img src="assets/logos/dongwon-homefood-blue.svg" alt="동원홈푸드">
+      <span class="sp"></span>
+      <img src="assets/logos/efarm-kids.png" alt="이팜키즈">
+      <span class="sp"></span>
+      <span class="trustBar__txt">be chef.</span>
+      <span class="sp"></span>
+      <span class="small" style="white-space:nowrap">전국 콜드체인 · 18,000여 종</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 지면 안내 (목차) ═════════════════════════════════════════ -->
+<section class="sec sec--tight" id="contents">
+  <div class="wrap">
+    <div class="secHead">
+      <div class="secHead__t">
+        <span class="lab" data-reveal>Contents — 지면 안내</span>
+        <h2 data-reveal style="--d:70ms">네 개의 지면으로<br>나눠 두었습니다.</h2>
+      </div>
+      <p class="secHead__a" data-reveal style="--d:140ms">
+        한 장에 몰아넣지 않았습니다. 원장님이 지금 확인하고 싶은 것만 골라 들어가실 수 있도록
+        <b>약속 · 식단 · 브랜드 스토리 · 카탈로그</b>로 지면을 분리했습니다.
+      </p>
+    </div>
+
+    <div class="dir" data-reveal>
+      <a class="dir__row" href="promise.html">
+        <span class="dir__n">01</span>
+        <span class="dir__t">네 가지 약속</span>
+        <span class="dir__d">지정후원 정시 집행 · 단가 안정 · 식단·간식 · 서류·전산</span>
+        <span class="dir__thumb"><img src="assets/web/goods.jpg" alt=""></span>
+        <span class="dir__go"><svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></span>
+      </a>
+      <a class="dir__row" href="menu.html">
+        <span class="dir__n">02</span>
+        <span class="dir__t">이달의 식단</span>
+        <span class="dir__d">주간 식단표 · 한 끼의 구성 · 간식 라인업</span>
+        <span class="dir__thumb"><img src="assets/web/tray-mint.png" alt=""></span>
+        <span class="dir__go"><svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></span>
+      </a>
+      <a class="dir__row" href="story.html">
+        <span class="dir__n">03</span>
+        <span class="dir__t">브랜드 스토리</span>
+        <span class="dir__d">이름의 원리 — ㅁ 자리에 들어간 쉼표</span>
+        <span class="dir__thumb"><img src="assets/web/serve.jpg" alt=""></span>
+        <span class="dir__go"><svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></span>
+      </a>
+      <a class="dir__row" href="archive.html">
+        <span class="dir__n">04</span>
+        <span class="dir__t">카탈로그 · 서류</span>
+        <span class="dir__d">인쇄 카탈로그 · 위생 체크리스트 · 예산표 양식</span>
+        <span class="dir__thumb"><img src="assets/web/desk.jpg" alt=""></span>
+        <span class="dir__go"><svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 01 · 고민 ═════════════════════════════════════════════════ -->
+<section class="sec sec--warm" id="concern">
+  <div class="wrap">
+    <div class="secHead">
+      <div class="secHead__t">
+        <span class="lab" data-reveal>01 — 시설 운영의 고민</span>
+        <h2 data-reveal style="--d:70ms">원장님, 혹시<br>이런 고민 있으셨나요?</h2>
+      </div>
+      <p class="secHead__a" data-reveal style="--d:140ms">
+        상담 현장에서 가장 자주 들은 네 가지입니다.
+        한 가지라도 해당된다면, 그 지점에서부터 함께 정리해 드리겠습니다.
+      </p>
+    </div>
+
+    <div class="q4">
+      <article class="q4__i" data-reveal>
+        <span class="q4__n">01</span>
+        <h3 class="q4__q">지정후원금, 이번 달엔 언제 들어올까?</h3>
+        <p class="q4__d">약속한 날짜를 넘기는 입금 때문에 운영 계획이 흔들립니다.</p>
+      </article>
+      <article class="q4__i" data-reveal style="--d:80ms">
+        <span class="q4__n">02</span>
+        <h3 class="q4__q">단가는 오르고, 발주는 막히고.</h3>
+        <p class="q4__d">정해 둔 예산표가 버티지 못합니다.</p>
+      </article>
+      <article class="q4__i" data-reveal style="--d:160ms">
+        <span class="q4__n">03</span>
+        <h3 class="q4__q">아이들 간식, 매번 뭘 사야 하나?</h3>
+        <p class="q4__d">식단과 간식 고민이 매주 반복됩니다.</p>
+      </article>
+      <article class="q4__i" data-reveal style="--d:240ms">
+        <span class="q4__n">04</span>
+        <h3 class="q4__q">영수증 풀칠, 서류 정리는 언제 끝나지?</h3>
+        <p class="q4__d">동네 마트 영수증은 증빙 정리가 번거롭습니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02 · 네 가지 약속 ═════════════════════════════════════════ -->
+<section class="sec" id="promise">
+  <div class="wrap">
+    <div class="secHead">
+      <div class="secHead__t">
+        <span class="lab" data-reveal>02 — 네 가지 약속</span>
+        <h2 data-reveal style="--d:70ms">고민은 네 가지,<br>약속도 네 가지.</h2>
+      </div>
+      <p class="secHead__a" data-reveal style="--d:140ms">
+        말로만 하는 약속은 남기지 않았습니다. 지킬 수 있는 것만 정하고,
+        정한 것은 매달 같은 방식으로 반복합니다. 각 약속은 지면을 나눠 자세히 적었습니다.
+      </p>
+    </div>
+
+    <div class="quad" data-reveal>
+      <a class="quad__i" href="promise.html#p01">
+        <span class="quad__n">01</span>
+        <h3 class="quad__t">정해진 날에 집행합니다.</h3>
+        <p class="quad__d">매월 마감 후 7일 이내. 집행 기준과 일정을 상담 단계에서 먼저 안내합니다.</p>
+        <span class="quad__go">자세히 <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></span>
+      </a>
+      <a class="quad__i" href="promise.html#p02">
+        <span class="quad__n">02</span>
+        <h3 class="quad__t">단가와 공급은<br>흔들리지 않게.</h3>
+        <p class="quad__d">이팜키즈 · be chef 500여 종과 동원홈푸드 전국 물류망으로 예측 가능한 운영을 돕습니다.</p>
+        <span class="quad__go">자세히 <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></span>
+      </a>
+      <a class="quad__i" href="promise.html#p03">
+        <span class="quad__n">03</span>
+        <h3 class="quad__t">식단과 간식은<br>매달 함께.</h3>
+        <p class="quad__d">1식 1국 4찬 1간식. 동원이팜 월간 자료를 시설 인원과 연령에 맞춰 조정합니다.</p>
+        <span class="quad__go">자세히 <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></span>
+      </a>
+      <a class="quad__i" href="promise.html#p04">
+        <span class="quad__n">04</span>
+        <h3 class="quad__t">서류는 한 번에<br>끝냅니다.</h3>
+        <p class="quad__d">납품부터 정산까지 기록이 남습니다. 거래명세서 전산 발행, 증빙 정리 시간이 줄어듭니다.</p>
+        <span class="quad__go">자세히 <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 풀블리드 사진 ═════════════════════════════════════════════ -->
+<section class="band" data-reveal="mask" style="height:clamp(340px,58vh,560px)">
+  <img src="assets/web/serve.jpg" alt="교사가 아이들에게 급식을 배식하는 모습" data-parallax="0.06">
+  <div class="band__cap">
+    <div class="wrap" style="padding-inline:0">
+      <p>아이들은 오늘도 <em>같은 시간</em>에 밥을 먹습니다.<br>그 시간을 지키는 일이 이츠밀이 하는 일입니다.</p>
+      <small>동원홈푸드 공식 파트너 · 어린이집 · 유치원 · 돌봄센터 · 지역아동센터</small>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 상담 ══════════════════════════════════════════════════════ -->
+<section class="sec section--deep" id="contact">
+  <div class="wrap contact">
+    <div data-reveal>
+      <span class="lab lab--light" style="color:var(--amber)">상담 · 견적</span>
+      <h2 class="h2" style="margin-top:18px">지금 쓰고 계신<br>단가표를 보내주세요.</h2>
+      <p class="lede" style="margin-top:20px">
+        현재 거래 조건과 나란히 비교해 드립니다.
+        시설 규모와 예산을 먼저 확인하고, 무리한 제안은 드리지 않습니다.
+      </p>
+
+      <div class="contact__ways">
+        <a class="way" href="tel:01076560301">
+          <span class="way__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+          <span><span class="way__t">전화 상담</span><span class="way__v">010-7656-0301</span></span>
+        </a>
+        <!-- 카카오톡 채널 URL이 정해지면 아래 카드를 주석 해제하고 href를 채우세요.
+        <a class="way" href="#">
+          <span class="way__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-3.8-.9L3 20.5l1.5-4.6A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5Z"/></svg></span>
+          <span><span class="way__t">카카오톡 채널</span><span class="way__v">@이츠밀</span></span>
+        </a>
+        -->
+      </div>
+    </div>
+
+    <div class="formCard" id="formCard" data-reveal style="--d:120ms">
+      <div class="formCard__head">
+        <b>상담 신청</b>
+        <span>영업일 기준 1일 안에 담당자가 연락드립니다.</span>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div style="display:grid;gap:12px">
+          <div class="formRow">
+            <label class="field"><span>시설명</span><input name="org" type="text" placeholder="예) 햇살어린이집" required></label>
+            <label class="field"><span>담당자 성함</span><input name="name" type="text" placeholder="홍길동"></label>
+          </div>
+          <div class="formRow">
+            <label class="field"><span>연락처</span><input name="phone" type="tel" placeholder="010-0000-0000" required></label>
+            <div class="field">
+              <span>시설 규모</span>
+              <select name="size">
+                <option>20명 이하</option>
+                <option>20 – 50명</option>
+                <option>50 – 100명</option>
+                <option>100명 이상</option>
+              </select>
+            </div>
+          </div>
+          <label class="field"><span>문의 내용 <i style="font-style:normal;color:var(--muted)">(선택)</i></span>
+            <textarea name="memo" placeholder="예) 지정후원 정산 방식과 현재 단가 비교를 원합니다."></textarea>
+          </label>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+          <label class="consent"><input type="checkbox" name="consent" value="y" required> <span>상담을 위한 개인정보(시설명·성함·연락처·문의내용) 수집·이용에 동의합니다. 상담 종료 후 1년간 보관하며 이후 파기합니다.</span></label>
+          <p class="formNote" id="formMsg" role="alert" style="color:var(--amber)"></p>
+          <button class="btn btn--primary" type="submit">상담 신청 보내기</button>
+        </div>
+      </form>
+
+      <div class="done">
+        <span class="done__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-6.5"/></svg></span>
+        <b style="font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink)">신청이 접수되었습니다</b>
+        <span style="font-size:14px;color:var(--muted);line-height:1.6">영업일 기준 1일 안에 담당자가<br>연락드리겠습니다.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div data-foot></div>
+
+<script src="vendor/lenis.min.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="assets/data/dw-months.js?v=2"></script>
+<script src="assets/js/eatsmil.js?v=1"></script>
+<script>
+/* ── 폼 · 진행바 · 히어로 로드 ─────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm')
+  const card = document.getElementById('formCard')
+  if (form) {
+    const msg = document.getElementById('formMsg')
+    const btn = form.querySelector('button[type=submit]')
+    const flag = (el, bad) => { el.style.borderColor = bad ? 'var(--amber)' : '' }
+    form.addEventListener('submit', async e => {
+      e.preventDefault()
+      const org = form.org.value.trim()
+      const phone = form.phone.value.replace(/[^0-9]/g, '')
+      flag(form.org, !org); flag(form.phone, phone.length < 9)
+      msg.textContent = ''
+      if (!org) return form.org.focus()
+      if (phone.length < 9) return form.phone.focus()
+      if (!form.consent.checked) { msg.textContent = '개인정보 수집·이용에 동의해 주세요.'; return form.consent.focus() }
+      btn.disabled = true
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        })
+        if (!res.ok) throw new Error(String(res.status))
+        card.classList.add('is-sent')
+      } catch {
+        msg.textContent = '전송에 실패했습니다. 잠시 후 다시 시도하시거나 전화로 문의해 주세요.'
+        btn.disabled = false
+      }
+    })
+  }
+
+  const cur = (window.DW_MONTHS || []).find(x => x.current)
+  if (cur) document.getElementById('floatMonth').textContent = cur.label + ' 식단표 보기'
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+  const lines = [...document.querySelectorAll('[data-cine-line]')]
+  const fades = [...document.querySelectorAll('[data-cine]')]
+  lines.forEach((el, i) => { el.style.transitionDelay = (140 + i * 130) + 'ms' })
+  fades.forEach((el, i) => { el.style.transitionDelay = (430 + i * 90) + 'ms' })
+  if (!reduce) {
+    requestAnimationFrame(() => setTimeout(() => {
+      lines.forEach(el => el.classList.add('is-in'))
+      setTimeout(() => fades.forEach(el => el.classList.add('is-in')), 120)
+    }, 90))
+  } else {
+    lines.concat(fades).forEach(el => el.classList.add('is-in'))
+  }
+})
+</script>
 </body>
 </html>
