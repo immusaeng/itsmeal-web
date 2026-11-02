@@ -62,7 +62,7 @@ const DW_MONTHS = [
     label: '9월',
     full: '2026년 9월',
     note: '키즈 통합 식단표 · 오전간식 / 점심 / 오후간식 2회',
-    menuDoc: 'assets/dw/menu-09.jpg',
+    menuDoc: null,
     menu: [
       { d: 'MON', am: '흰죽 · 귀리닭가슴살죽', rice: '보리밥', soup: '시래기된장국', side: '표고소불고기 · 오이볶음 · 배추김치', pm: '브로콜리소고기유부초밥' },
       { d: 'TUE', am: '크래미양배추죽', rice: '차조밥', soup: '맑은청경채국', side: '소고기마늘종굴소스볶음 · 어묵볶음 · 열무김치', pm: '햄치즈김가루주먹밥' },
@@ -71,7 +71,7 @@ const DW_MONTHS = [
       { d: 'FRI', am: '단호박죽', rice: '차조밥', soup: '미역국', side: '닭갈비 · 콩나물무침 · 계란말이', pm: '제철 과일 · 요거트' },
     ],
     snacks: [],
-    snackDoc: 'assets/dw/menu-09.jpg',
+    snackDoc: null,
     recipe: { name: '치킨 새콤 샌드위치', img: 'assets/dw/recipe-09-1.jpg' },
   },
   {
@@ -107,7 +107,6 @@ const DW_DOCS = [
   { id: 'recipe-10', month: '2026-10', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 10월 · 애호박채덕전', pages: 1, cover: 'assets/dw/recipe-10-1.jpg' },
   { id: 'kium-10', month: '2026-10', kind: '이미지', title: '키움 돌봄센터 간식 상품 소개서', sub: '2026년 10월 · 간식 식단 소개', pages: 1, cover: 'assets/dw/kium-10.jpg' },
   { id: 'recipe-09', month: '2026-09', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 9월 · 치킨 새콤 샌드위치', pages: 1, cover: 'assets/dw/recipe-09-1.jpg' },
-  { id: 'menu-09', month: '2026-09', kind: '이미지', title: '키즈 통합 식단표', sub: '2026년 9월 · 점심 및 간식', pages: 1, cover: 'assets/dw/menu-09.jpg' },
   { id: 'recipe-08', month: '2026-08', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 8월 · 돈장조림버터밥전', pages: 1, cover: 'assets/dw/recipe-08-1.jpg' },
   { id: 'kium-08', month: '2026-08', kind: '이미지', title: '키움 돌봄센터 간식 상품 소개서', sub: '2026년 8월 · 간식 식단 소개', pages: 1, cover: 'assets/dw/kium-08.jpg' },
   { id: 'recipe-07', month: '2026-07', kind: '이미지', title: '동원이팜 수제 간식 레시피 BOOK', sub: '2026년 7월 · 수제두부피자', pages: 1, cover: 'assets/dw/recipe-07-1.jpg' },
