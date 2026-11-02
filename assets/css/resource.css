@@ -982,3 +982,6 @@ body[data-page="hub"] [data-reveal] {
 .qrFoot--paper img { width: 64px; height: 64px; }
 .capHost .capFoot .capQr { width: 72px; height: 72px; vertical-align: middle; }
 @media print { .qrFoot { display: flex; break-inside: avoid; } }
+
+/* 화살표는 명조(Hahmlet)에 글리프가 없어 본문 고딕으로 */
+.ar { font-style: normal; font-family: var(--sans); }
