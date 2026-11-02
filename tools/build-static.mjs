@@ -38,7 +38,7 @@ const PAGES = {
   '404.html': ['nav', 'foot'],
   'menu.html': ['nav', 'foot', 'm-full', 'm-week', 'm-key', 'wk-board'],
   'archive.html': ['nav', 'foot', 'arc-tabs', 'arc-grid'],
-  'resource-season.html': ['nav', 'foot'],
+  'resource-season.html': ['nav', 'foot', 'season-veg', 'season-sea'],
   'resource-hygiene-check.html': ['nav', 'foot'],
   'resource-hygiene-tips.html': ['nav', 'foot'],
 }
@@ -56,6 +56,27 @@ const cur = MONTHS.find(m => m.current) ?? MONTHS[0]
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 const abs = p => (p.startsWith('/') ? p : '/' + p)
 const arrow = '<svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg>'
+
+// 제철 도감 표: 검색·공유 미리보기에도 내용이 보이도록 HTML에 써 둔다(런타임 JS가 같은 행을 다시 그리며 '이번 달'만 더한다)
+const SEASON_BOX = { window: {} }
+vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'assets/data/season.js'), 'utf8'), SEASON_BOX)
+const SEASON = SEASON_BOX.window.SEASON
+const sCells = (mode, months, peak) => Array.from({ length: 12 }, (_, i) => {
+  const m = i + 1
+  let cls = 'cell'
+  if (mode === 'veg') { if (months.length === 12 && months.indexOf(1) === 0) cls += ' year'; else if (months.indexOf(m) > -1) cls += ' on' }
+  else if (peak && peak.indexOf(m) > -1) cls += ' on'
+  else if (months.indexOf(m) > -1) cls += ' mid'
+  return `<td class="${cls}"></td>`
+}).join('')
+const sVeg = r => `<tr data-season="veg"><td class="t-item" title="${esc(r.item)}">${esc(r.item)}</td><td class="t-orig" title="${esc(r.prov + (r.district ? ' ' + r.district : ''))}">${r.district ? '<b>' + esc(r.prov) + '</b> ' + esc(r.district) : esc(r.prov)}</td>${sCells('veg', r.months, null)}<td class="t-note${r.year ? ' is-year' : ''}">${esc(r.note)}</td></tr>`
+const sSea = r => `<tr data-season="sea"><td class="t-item" title="${esc(r.item)}">${esc(r.item)}</td><td class="t-orig" title="${esc(r.label)}"><b>${esc(r.group)}</b> ${esc(r.label.replace(/^[^·]*·s*/, ''))}</td>${sCells('sea', r.run, r.peak)}<td class="t-note">${esc(r.note)}</td></tr>`
+const sBody = kind => (kind === 'veg' ? SEASON.vegGroups : SEASON.seaGroups).map(g => {
+  const rows = (kind === 'veg' ? SEASON.veg : SEASON.sea).filter(r => r.group === g)
+  if (!rows.length) return ''
+  const head = kind === 'veg' ? `${g}<em>${rows.length}개 산지</em>` : `${g === '국산' ? '국산 · 연근해' : g === '원양' ? '원양 · 조업' : '수입 · 냉동'}<em>${rows.length}품목</em>`
+  return `<tr class="grp" id="${kind === 'veg' ? 'g' : 'sg'}-${encodeURIComponent(g)}"><td colspan="15"><span class="grp__k">${head}</span></td></tr>` + rows.map(kind === 'veg' ? sVeg : sSea).join('')
+}).join('')
 
 // ── 템플릿 ─────────────────────────────────────────────────────────────────────
 const nav = (active, dark) => `
@@ -136,6 +157,8 @@ const GEN = (name, page) => ({
   'm-week': () => `${cur.label} ${cur.weekLabel ?? ''}`.trim(),
   'm-key': () => `Week 1 — ${yy}. ${Number(mm)}.`,
   'wk-board': board,
+  'season-veg': () => sBody('veg'),
+  'season-sea': () => sBody('sea'),
   'arc-tabs': tabs,
   'arc-grid': cards,
 })[name]()
