@@ -22,6 +22,20 @@
 <link rel="stylesheet" href="assets/css/v3.css?v=1">
 </head>
 <body data-page="archive">
+<!--gen:nav-->
+<header class="nav" id="siteNav">
+  <div class="nav__in">
+    <a class="nav__logo" href="/" aria-label="이츠밀 홈">
+      <img class="logo-navy" src="/assets/logos/mil2-navy.svg" alt="이츠밀">
+      <img class="logo-white" src="/assets/logos/mil2-white.svg" alt="" aria-hidden="true">
+    </a>
+    <nav class="nav__menu"><a href="/promise" class="">네 가지 약속</a><a href="/menu" class="">이달의 식단</a><a href="/story" class="">브랜드 스토리</a><a href="/archive" class="is-active">카탈로그 · 서류</a></nav>
+    <a class="nav__cta" href="/#contact">상담 신청 <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></a>
+    <button class="nav__burger" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<div class="navSheet"><a href="/promise">네 가지 약속</a><a href="/menu">이달의 식단</a><a href="/story">브랜드 스토리</a><a href="/archive">카탈로그 · 서류</a><a href="/#contact">상담 신청</a></div>
+<!--/gen:nav-->
 
 <section class="pageTop">
   <div class="wrap">
@@ -233,11 +247,60 @@
     </div>
 
     <div class="monthBar" data-reveal style="margin-bottom:26px">
-      <div class="monthTabs" id="arcTabs"></div>
+      <div class="monthTabs" id="arcTabs"><!--gen:arc-tabs-->
+        <button class="monthTab on" data-m="all">전체</button>
+        <button class="monthTab" data-m="2026-10">10월</button>
+        <button class="monthTab" data-m="2026-09">9월</button>
+        <button class="monthTab" data-m="2026-08">8월</button>
+        <button class="monthTab" data-m="2026-06">6월</button>
+      <!--/gen:arc-tabs--></div>
       <span class="monthBar__note">최신순</span>
     </div>
 
-    <div class="docGrid" id="arcGrid" data-reveal></div>
+    <div class="docGrid" id="arcGrid" data-reveal><!--gen:arc-grid-->
+      <div class="doc" data-month="2026-10">
+        <button class="doc__paper" data-zoom="/assets/dw/recipe-10-1.jpg" data-title="동원이팜 수제 간식 레시피 BOOK" style="border:0;padding:9px">
+          <img src="/assets/dw/recipe-10-1.jpg" alt="동원이팜 수제 간식 레시피 BOOK">
+          <span class="doc__zoom">크게 보기</span>
+        </button>
+        <div><div class="doc__k">동원이팜 수제 간식 레시피 BOOK</div><div class="doc__d">2026년 10월 · 애호박채덕전 · 이미지 1p</div></div>
+      </div>
+      <div class="doc" data-month="2026-09">
+        <button class="doc__paper" data-zoom="/assets/dw/recipe-09-1.jpg" data-title="동원이팜 수제 간식 레시피 BOOK" style="border:0;padding:9px">
+          <img src="/assets/dw/recipe-09-1.jpg" alt="동원이팜 수제 간식 레시피 BOOK">
+          <span class="doc__zoom">크게 보기</span>
+        </button>
+        <div><div class="doc__k">동원이팜 수제 간식 레시피 BOOK</div><div class="doc__d">2026년 9월 · 치킨 새콤 샌드위치 · 이미지 1p</div></div>
+      </div>
+      <div class="doc" data-month="2026-09">
+        <button class="doc__paper" data-zoom="/assets/dw/menu-09.jpg" data-title="키즈 통합 식단표" style="border:0;padding:9px">
+          <img src="/assets/dw/menu-09.jpg" alt="키즈 통합 식단표">
+          <span class="doc__zoom">크게 보기</span>
+        </button>
+        <div><div class="doc__k">키즈 통합 식단표</div><div class="doc__d">2026년 9월 · 점심 및 간식 · 이미지 1p</div></div>
+      </div>
+      <div class="doc" data-month="2026-08">
+        <button class="doc__paper" data-zoom="/assets/dw/recipe-08-1.jpg" data-title="동원이팜 수제 간식 레시피 BOOK" style="border:0;padding:9px">
+          <img src="/assets/dw/recipe-08-1.jpg" alt="동원이팜 수제 간식 레시피 BOOK">
+          <span class="doc__zoom">크게 보기</span>
+        </button>
+        <div><div class="doc__k">동원이팜 수제 간식 레시피 BOOK</div><div class="doc__d">2026년 8월 · 돈장조림버터밥전 · 이미지 1p</div></div>
+      </div>
+      <div class="doc" data-month="2026-08">
+        <button class="doc__paper" data-zoom="/assets/dw/kium-08.jpg" data-title="키움 돌봄센터 간식 상품 소개서" style="border:0;padding:9px">
+          <img src="/assets/dw/kium-08.jpg" alt="키움 돌봄센터 간식 상품 소개서">
+          <span class="doc__zoom">크게 보기</span>
+        </button>
+        <div><div class="doc__k">키움 돌봄센터 간식 상품 소개서</div><div class="doc__d">2026년 8월 · 간식 식단 소개 · 이미지 1p</div></div>
+      </div>
+      <div class="doc" data-month="2026-06">
+        <button class="doc__paper" data-zoom="/assets/dw/recipe-06.jpg" data-title="동원이팜 수제 간식 레시피 BOOK" style="border:0;padding:9px">
+          <img src="/assets/dw/recipe-06.jpg" alt="동원이팜 수제 간식 레시피 BOOK">
+          <span class="doc__zoom">크게 보기</span>
+        </button>
+        <div><div class="doc__k">동원이팜 수제 간식 레시피 BOOK</div><div class="doc__d">2026년 6월 · 모닝방게란방 · 이미지 1p</div></div>
+      </div>
+    <!--/gen:arc-grid--></div>
   </div>
 </section>
 
@@ -257,59 +320,69 @@
   <div class="lightbox__body"><img id="lbImg" alt=""></div>
 </div>
 
-<div data-foot></div>
+<!--gen:foot-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div>
+        <img class="foot__logo" src="/assets/logos/mil2-white.svg" alt="이츠밀">
+        <p class="foot__tag">아이들 밥상은 든든하게,<br>원장님의 운영 고민은 가볍게.</p>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="/promise">네 가지 약속</a></li>
+          <li><a href="/menu">이달의 식단</a></li>
+          <li><a href="/story">브랜드 스토리</a></li>
+          <li><a href="/archive">카탈로그 · 서류</a></li>
+          <li><a href="/#contact">상담 · 견적 신청</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>문의</h5>
+        <ul>
+          <li><a href="tel:01076560301">010-7656-0301</a></li>
+          <li><a href="mailto:contact@itsmeal.co.kr">contact@itsmeal.co.kr</a></li>
+          <li>평일 09:00 – 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar">
+      <span>이츠밀 · it's meal &nbsp;|&nbsp; 동원홈푸드 공식 파트너</span>
+      <span><a href="/privacy">개인정보 처리방침</a> &nbsp;|&nbsp; © 2026 Eats Mil. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+<!--/gen:foot-->
 <script src="vendor/lenis.min.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
-<script src="assets/data/dw-months.js?v=2"></script>
 <script src="assets/js/eatsmil.js?v=1"></script>
 <script>
-/* 월간 자료 그리드 */
+/* 월 탭: 빌드 때 HTML에 들어간 카드를 숨김/표시 + 확대 보기 */
 document.addEventListener('DOMContentLoaded', () => {
-  const docs = window.DW_DOCS || []
-  const grid = document.getElementById('arcGrid')
   const tabs = document.getElementById('arcTabs')
-  if (!grid || !docs.length) return
+  const cards = [...document.querySelectorAll('#arcGrid > .doc')]
+  if (!tabs) return
 
-  const months = [...new Set(docs.map(d => d.month))]
-  tabs.innerHTML = '<button class="monthTab on" data-m="all">전체</button>' +
-    months.map(m => { const p = m.split('-'); return '<button class="monthTab" data-m="' + m + '">' + parseInt(p[1], 10) + '월</button>' }).join('')
+  tabs.addEventListener('click', e => {
+    const b = e.target.closest('.monthTab')
+    if (!b) return
+    tabs.querySelectorAll('.monthTab').forEach(x => x.classList.toggle('on', x === b))
+    cards.forEach(d => { d.hidden = b.dataset.m !== 'all' && d.dataset.month !== b.dataset.m })
+  })
 
-  const draw = (m) => {
-    const list = m === 'all' ? docs : docs.filter(d => d.month === m)
-    grid.innerHTML = list.map(d => (
-      '<div class="doc">' +
-        '<button class="doc__paper" data-zoom="' + d.cover + '" data-title="' + d.title + '" style="border:0;padding:9px">' +
-          '<img src="' + d.cover + '" alt="' + d.title + '">' +
-          '<span class="doc__zoom">크게 보기</span>' +
-        '</button>' +
-        '<div><div class="doc__k">' + d.title + '</div>' +
-        '<div class="doc__d">' + d.sub + ' · ' + d.kind + ' ' + d.pages + 'p</div></div>' +
-      '</div>'
-    )).join('')
-    bindZoom()
-  }
-
-  const bindZoom = () => {
-    grid.querySelectorAll('[data-zoom]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lb = document.getElementById('lightbox')
-        const img = document.getElementById('lbImg')
-        img.src = btn.dataset.zoom
-        img.alt = btn.dataset.title || ''
-        lb.classList.add('is-open')
-        lb.setAttribute('aria-hidden', 'false')
-        document.body.style.overflow = 'hidden'
-      })
+  const lb = document.getElementById('lightbox')
+  const img = document.getElementById('lbImg')
+  document.querySelectorAll('#arcGrid [data-zoom]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      img.src = btn.dataset.zoom
+      img.alt = btn.dataset.title || ''
+      lb.classList.add('is-open')
+      lb.setAttribute('aria-hidden', 'false')
+      document.body.style.overflow = 'hidden'
     })
-  }
-
-  tabs.querySelectorAll('.monthTab').forEach(b => b.addEventListener('click', () => {
-    tabs.querySelectorAll('.monthTab').forEach(x => x.classList.remove('on'))
-    b.classList.add('on')
-    draw(b.dataset.m)
-  }))
-  draw('all')
+  })
 })
 
 /* 라이트박스 닫기 */

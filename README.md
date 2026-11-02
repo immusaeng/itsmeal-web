@@ -20,6 +20,7 @@ db/schema.sql                               inquiries 테이블
 
 1. `assets/data/dw-months.js`의 `DW_MONTHS` 맨 앞에 새 달 블록 추가, 이전 달의 `current: true` 제거
 2. 원본 이미지를 `assets/dw/`에 넣고 `DW_DOCS`에 카드 추가
+3. **`node tools/build-static.mjs` 실행** → 식단표·자료 카드·"N월 식단표 보기"가 HTML에 반영된다(`--check`로 확인). 결과 HTML을 같이 커밋한다. 자세한 설명은 `tools/README.md`
 
 ## 상담 폼 설정 (Cloudflare 대시보드, 파일로는 설정하지 않음)
 

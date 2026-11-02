@@ -1,52 +1,14 @@
 /* ═══════════════════════════════════════════════════════════════════════
    이츠밀 홈페이지 — 공통 스크립트
-   내비/푸터 주입 · Lenis 스무스 스크롤 · GSAP 리빌 · 카운터 · 패럴랙스
+   내비 동작 · Lenis 스무스 스크롤 · GSAP 리빌 · 카운터 · 패럴랙스
    ═══════════════════════════════════════════════════════════════════════ */
 
-const SITE = {
-  phone: '010-7656-0301',
-  phoneHref: 'tel:01076560301',
-  kakao: '#',
-  email: 'contact@itsmeal.co.kr',
-  nav: [
-    { href: '/promise', label: '네 가지 약속',  key: 'promise' },
-    { href: '/menu',    label: '이달의 식단',   key: 'menu' },
-    { href: '/story',   label: '브랜드 스토리', key: 'story' },
-    { href: '/archive', label: '카탈로그 · 서류', key: 'archive' },
-  ],
-}
-
-const arrowSVG = '<svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg>'
-
-function buildNav(active) {
-  const dark = document.documentElement.dataset.navDark === 'true'
-  const links = SITE.nav.map(n =>
-    `<a href="${n.href}" class="${active === n.key ? 'is-active' : ''}">${n.label}</a>`
-  ).join('')
-
-  const nav = document.createElement('header')
-  nav.className = 'nav' + (dark ? ' is-dark' : '')
-  nav.id = 'siteNav'
-  nav.innerHTML = `
-    <div class="nav__in">
-      <a class="nav__logo" href="/" aria-label="이츠밀 홈">
-        <img class="logo-navy" src="/assets/logos/mil2-navy.svg" alt="이츠밀">
-        <img class="logo-white" src="/assets/logos/mil2-white.svg" alt="" aria-hidden="true">
-      </a>
-      <nav class="nav__menu">${links}</nav>
-      <a class="nav__cta" href="/#contact">상담 신청 ${arrowSVG}</a>
-      <button class="nav__burger" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
-    </div>`
-
-  const sheet = document.createElement('div')
-  sheet.className = 'navSheet'
-  sheet.innerHTML = SITE.nav.map(n => `<a href="${n.href}">${n.label}</a>`).join('') +
-    `<a href="/#contact">상담 신청</a>`
-
-  document.body.prepend(sheet)
-  document.body.prepend(nav)
-
-  const burger = nav.querySelector('.nav__burger')
+/* ── 내비 동작 (마크업은 build-static.mjs가 HTML에 써 넣는다) ───────────── */
+function initNav() {
+  const nav = document.getElementById('siteNav')
+  const sheet = document.querySelector('.navSheet')
+  const burger = nav && nav.querySelector('.nav__burger')
+  if (!nav || !sheet || !burger) return nav
   burger.addEventListener('click', () => {
     const open = sheet.classList.toggle('is-open')
     burger.setAttribute('aria-expanded', String(open))
@@ -55,42 +17,7 @@ function buildNav(active) {
     sheet.classList.remove('is-open')
     burger.setAttribute('aria-expanded', 'false')
   }))
-
   return nav
-}
-
-function buildFoot() {
-  const box = document.querySelector('[data-foot]')
-  if (!box) return
-  box.className = 'foot'
-  box.innerHTML = `
-    <div class="wrap">
-      <div class="foot__top">
-        <div>
-          <img class="foot__logo" src="/assets/logos/mil2-white.svg" alt="이츠밀">
-          <p class="foot__tag">아이들 밥상은 든든하게,<br>원장님의 운영 고민은 가볍게.</p>
-        </div>
-        <div>
-          <h5>바로가기</h5>
-          <ul>
-            ${SITE.nav.map(n => `<li><a href="${n.href}">${n.label}</a></li>`).join('')}
-            <li><a href="/#contact">상담 · 견적 신청</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>문의</h5>
-          <ul>
-            <li><a href="${SITE.phoneHref}">${SITE.phone}</a></li>
-            <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
-            <li>평일 09:00 – 18:00</li>
-          </ul>
-        </div>
-      </div>
-      <div class="foot__bar">
-        <span>이츠밀 · it's meal &nbsp;|&nbsp; 동원홈푸드 공식 파트너</span>
-        <span><a href="/privacy">개인정보 처리방침</a> &nbsp;|&nbsp; © 2026 Eats Mil. All rights reserved.</span>
-      </div>
-    </div>`
 }
 
 /* ── 카운터 ───────────────────────────────────────────────────────── */
@@ -300,10 +227,8 @@ function initHeroLoad() {
 
 /* ── 부팅 ──────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  const active = document.body.dataset.page || ''
-  const nav = buildNav(active)
-  buildFoot()
-  initNavState(nav)
+  const nav = initNav()
+  if (nav) initNavState(nav)
   initReveal()
   initCounters()
   initHeroLoad()

@@ -22,6 +22,20 @@
 <link rel="stylesheet" href="assets/css/v3.css?v=1">
 </head>
 <body data-page="story">
+<!--gen:nav-->
+<header class="nav" id="siteNav">
+  <div class="nav__in">
+    <a class="nav__logo" href="/" aria-label="이츠밀 홈">
+      <img class="logo-navy" src="/assets/logos/mil2-navy.svg" alt="이츠밀">
+      <img class="logo-white" src="/assets/logos/mil2-white.svg" alt="" aria-hidden="true">
+    </a>
+    <nav class="nav__menu"><a href="/promise" class="">네 가지 약속</a><a href="/menu" class="">이달의 식단</a><a href="/story" class="is-active">브랜드 스토리</a><a href="/archive" class="">카탈로그 · 서류</a></nav>
+    <a class="nav__cta" href="/#contact">상담 신청 <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></a>
+    <button class="nav__burger" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<div class="navSheet"><a href="/promise">네 가지 약속</a><a href="/menu">이달의 식단</a><a href="/story">브랜드 스토리</a><a href="/archive">카탈로그 · 서류</a><a href="/#contact">상담 신청</a></div>
+<!--/gen:nav-->
 
 <section class="pageTop">
   <div class="wrap">
@@ -186,7 +200,40 @@
   </div>
 </section>
 
-<div data-foot></div>
+<!--gen:foot-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div>
+        <img class="foot__logo" src="/assets/logos/mil2-white.svg" alt="이츠밀">
+        <p class="foot__tag">아이들 밥상은 든든하게,<br>원장님의 운영 고민은 가볍게.</p>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="/promise">네 가지 약속</a></li>
+          <li><a href="/menu">이달의 식단</a></li>
+          <li><a href="/story">브랜드 스토리</a></li>
+          <li><a href="/archive">카탈로그 · 서류</a></li>
+          <li><a href="/#contact">상담 · 견적 신청</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>문의</h5>
+        <ul>
+          <li><a href="tel:01076560301">010-7656-0301</a></li>
+          <li><a href="mailto:contact@itsmeal.co.kr">contact@itsmeal.co.kr</a></li>
+          <li>평일 09:00 – 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar">
+      <span>이츠밀 · it's meal &nbsp;|&nbsp; 동원홈푸드 공식 파트너</span>
+      <span><a href="/privacy">개인정보 처리방침</a> &nbsp;|&nbsp; © 2026 Eats Mil. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+<!--/gen:foot-->
 <script src="vendor/lenis.min.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>

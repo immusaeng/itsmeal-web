@@ -22,6 +22,20 @@
 <link rel="stylesheet" href="assets/css/v3.css?v=1">
 </head>
 <body data-page="menu">
+<!--gen:nav-->
+<header class="nav" id="siteNav">
+  <div class="nav__in">
+    <a class="nav__logo" href="/" aria-label="이츠밀 홈">
+      <img class="logo-navy" src="/assets/logos/mil2-navy.svg" alt="이츠밀">
+      <img class="logo-white" src="/assets/logos/mil2-white.svg" alt="" aria-hidden="true">
+    </a>
+    <nav class="nav__menu"><a href="/promise" class="">네 가지 약속</a><a href="/menu" class="is-active">이달의 식단</a><a href="/story" class="">브랜드 스토리</a><a href="/archive" class="">카탈로그 · 서류</a></nav>
+    <a class="nav__cta" href="/#contact">상담 신청 <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5h12M9.5 3.5 14.5 8.5 9.5 13.5"/></svg></a>
+    <button class="nav__burger" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<div class="navSheet"><a href="/promise">네 가지 약속</a><a href="/menu">이달의 식단</a><a href="/story">브랜드 스토리</a><a href="/archive">카탈로그 · 서류</a><a href="/#contact">상담 신청</a></div>
+<!--/gen:nav-->
 
 <section class="pageTop">
   <div class="wrap">
@@ -36,7 +50,7 @@
           동원이팜 월간 자료를 기준으로, 시설 인원과 연령에 맞춰 조정합니다.
           오전·오후 간식까지 요일별로 묶어 한 장에 정리해 드립니다.
         </p>
-        <span class="small" style="margin-top:8px" id="mFull">2026년 11월 기준</span>
+        <span class="small" style="margin-top:8px" id="mFull"><!--gen:m-full-->2026년 11월 기준<!--/gen:m-full--></span>
       </div>
     </div>
   </div>
@@ -59,7 +73,7 @@
     <div class="secHead">
       <div class="secHead__t">
         <span class="lab" data-reveal>01 — 주간 식단표</span>
-        <h2 data-reveal style="--d:70ms" id="mWeek">11월 첫째 주</h2>
+        <h2 data-reveal style="--d:70ms" id="mWeek"><!--gen:m-week-->11월 첫째 주<!--/gen:m-week--></h2>
       </div>
       <p class="secHead__a" data-reveal style="--d:140ms">
         한 칸에 하루가 들어갑니다. 오전 간식 → 점심(밥·국·찬 4) → 오후 간식 순서입니다.
@@ -70,12 +84,43 @@
     <div data-reveal>
       <div class="wkHead">
         <div class="wkHead__l">
-          <span class="wkHead__k" id="mKey">Week 1 — 2026. 11.</span>
+          <span class="wkHead__k" id="mKey"><!--gen:m-key-->Week 1 — 2026. 11.<!--/gen:m-key--></span>
           <span class="wkHead__t">월요일부터 금요일까지</span>
         </div>
         <div class="wkHead__r"><b>동원이팜 이팜키즈</b><span>·</span><span>1식 1국 4찬 1간식</span></div>
       </div>
-      <div class="wk" id="wkBoard"></div>
+      <div class="wk" id="wkBoard"><!--gen:wk-board-->
+        <div class="wk__col">
+          <div class="wk__d"><b>월요일</b><span>MON</span></div>
+          <div class="wk__slot"><span class="wk__k">오전 간식</span><span class="wk__sn">참치마요구운주먹밥</span></div>
+          <div class="wk__slot wk__main"><span class="wk__k">점심 · 예시</span><div class="wk__rice">현미밥</div><div class="wk__soup">미역국</div><div class="wk__side"><span>닭갈비</span><span>콩나물무침</span><span>계란말이</span></div></div>
+          <div class="wk__slot"><span class="wk__k">오후 간식</span><span class="wk__sn">리이브제주감귤주스</span></div>
+        </div>
+        <div class="wk__col">
+          <div class="wk__d"><b>화요일</b><span>TUE</span></div>
+          <div class="wk__slot"><span class="wk__k">오전 간식</span><span class="wk__sn">제철 과일</span></div>
+          <div class="wk__slot wk__main"><span class="wk__k">점심 · 예시</span><div class="wk__rice">잡곡밥</div><div class="wk__soup">육개장</div><div class="wk__side"><span>계란찜</span><span>시금치나물</span><span>멸치볶음</span></div></div>
+          <div class="wk__slot"><span class="wk__k">오후 간식</span><span class="wk__sn">오프룻딸기알로에</span></div>
+        </div>
+        <div class="wk__col">
+          <div class="wk__d"><b>수요일</b><span>WED</span></div>
+          <div class="wk__slot"><span class="wk__k">오전 간식</span><span class="wk__sn">슈크림패스츄리</span></div>
+          <div class="wk__slot wk__main"><span class="wk__k">점심 · 예시</span><div class="wk__rice">치즈김밥</div><div class="wk__soup">어묵국</div><div class="wk__side"><span>어묵볶음</span><span>단무지</span><span>샐러드</span></div></div>
+          <div class="wk__slot"><span class="wk__k">오후 간식</span><span class="wk__sn">액티비아스무디요거트(골드키위사과)</span></div>
+        </div>
+        <div class="wk__col">
+          <div class="wk__d"><b>목요일</b><span>THU</span></div>
+          <div class="wk__slot"><span class="wk__k">오전 간식</span><span class="wk__sn">새하얀구운란</span></div>
+          <div class="wk__slot wk__main"><span class="wk__k">점심 · 예시</span><div class="wk__rice">카레라이스</div><div class="wk__soup">된장국</div><div class="wk__side"><span>두부조림</span><span>양배추샐러드</span><span>오이무침</span></div></div>
+          <div class="wk__slot"><span class="wk__k">오후 간식</span><span class="wk__sn">덴마크드링킹요구르트 납작복숭아</span></div>
+        </div>
+        <div class="wk__col">
+          <div class="wk__d"><b>금요일</b><span>FRI</span></div>
+          <div class="wk__slot"><span class="wk__k">오전 간식</span><span class="wk__sn">시카고피자데리야끼치즈</span></div>
+          <div class="wk__slot wk__main"><span class="wk__k">점심 · 예시</span><div class="wk__rice">흑미밥</div><div class="wk__soup">된장국</div><div class="wk__side"><span>불고기</span><span>숙주나물</span><span>김구이</span></div></div>
+          <div class="wk__slot"><span class="wk__k">오후 간식</span><span class="wk__sn">덴마크테이크얼라이브 망고주스</span></div>
+        </div>
+      <!--/gen:wk-board--></div>
     </div>
 
     <p class="small" data-reveal style="margin-top:18px;max-width:70ch">
@@ -261,39 +306,45 @@
   <div class="lightbox__body"><img id="lbImg" alt=""></div>
 </div>
 
-<div data-foot></div>
+<!--gen:foot-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div>
+        <img class="foot__logo" src="/assets/logos/mil2-white.svg" alt="이츠밀">
+        <p class="foot__tag">아이들 밥상은 든든하게,<br>원장님의 운영 고민은 가볍게.</p>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="/promise">네 가지 약속</a></li>
+          <li><a href="/menu">이달의 식단</a></li>
+          <li><a href="/story">브랜드 스토리</a></li>
+          <li><a href="/archive">카탈로그 · 서류</a></li>
+          <li><a href="/#contact">상담 · 견적 신청</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>문의</h5>
+        <ul>
+          <li><a href="tel:01076560301">010-7656-0301</a></li>
+          <li><a href="mailto:contact@itsmeal.co.kr">contact@itsmeal.co.kr</a></li>
+          <li>평일 09:00 – 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar">
+      <span>이츠밀 · it's meal &nbsp;|&nbsp; 동원홈푸드 공식 파트너</span>
+      <span><a href="/privacy">개인정보 처리방침</a> &nbsp;|&nbsp; © 2026 Eats Mil. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+<!--/gen:foot-->
 <script src="vendor/lenis.min.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
-<script src="assets/data/dw-months.js?v=2"></script>
 <script src="assets/js/eatsmil.js?v=1"></script>
 <script>
-/* 주간 식단 보드 — 데이터에서 생성 */
-document.addEventListener('DOMContentLoaded', () => {
-  const board = document.getElementById('wkBoard')
-  if (!board) return
-  const m = (window.DW_MONTHS || []).find(x => x.current)
-  if (!m || !m.menu) return
-  const [yy, mm] = m.id.split('-')
-  document.getElementById('mFull').textContent = m.full + ' 기준'
-  document.getElementById('mWeek').textContent = m.label + ' ' + (m.weekLabel || '')
-  document.getElementById('mKey').textContent = 'Week 1 — ' + yy + '. ' + Number(mm) + '.'
-  const DAY = { MON: '월', TUE: '화', WED: '수', THU: '목', FRI: '금' }
-  const code = { '미숫가루우유': '194523', '하루야채': '181955', '클래식소시지빵': '194549' }
-  board.innerHTML = m.menu.map(row => {
-    const sides = row.side.split('·').map(s => s.trim())
-    return '<div class="wk__col">' +
-      '<div class="wk__d"><b>' + DAY[row.d] + '요일</b><span>' + row.d + '</span></div>' +
-      '<div class="wk__slot"><span class="wk__k">오전 간식</span><span class="wk__sn">' + row.am + '</span>' +
-        (code[row.am] ? '<span class="wk__code">' + code[row.am] + '</span>' : '') + '</div>' +
-      '<div class="wk__slot wk__main"><span class="wk__k">점심 · 예시</span>' +
-        '<div class="wk__rice">' + row.rice + '</div><div class="wk__soup">' + row.soup + '</div>' +
-        '<div class="wk__side">' + sides.map(s => '<span>' + s + '</span>').join('') + '</div></div>' +
-      '<div class="wk__slot"><span class="wk__k">오후 간식</span><span class="wk__sn">' + row.pm + '</span></div>' +
-    '</div>'
-  }).join('')
-})
-
 /* 라이트박스 */
 document.addEventListener('DOMContentLoaded', () => {
   const lb = document.getElementById('lightbox')
