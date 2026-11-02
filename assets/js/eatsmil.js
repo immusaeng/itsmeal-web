@@ -230,7 +230,7 @@ function initHeroLoad() {
 function initMbar() {
   const bar = document.getElementById('mbar')
   if (!bar) return
-  const here = location.pathname.replace(//$/, '') || '/'
+  const here = location.pathname.replace(/\/$/, '') || '/'
   bar.querySelectorAll('a').forEach(a => { if ((a.getAttribute('href') || '') === here) a.classList.add('is-active') })
   const form = document.getElementById('contact')
   if (form && 'IntersectionObserver' in window) {
