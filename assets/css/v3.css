@@ -930,7 +930,7 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .q4__give { display: grid; gap: 6px; margin: 16px 0 0; padding: 14px 16px; border-left: 3px solid var(--amber); background: var(--paper); border-radius: 0 10px 10px 0; font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); max-width: 46ch; }
 .q4__give > span { font-size: 11px; font-weight: 800; letter-spacing: .14em; color: var(--green); }
 .q4__give b { font-weight: 700; color: var(--ink); }
-.q4__give a { display: inline-flex; align-items: center; gap: 6px; margin-left: 8px; font-weight: 800; color: var(--green); white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
+.q4__give a { display: inline-flex; align-items: center; gap: 6px; margin-left: 0; margin-top: 4px; font-weight: 800; color: var(--green); white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
 .q4__give a svg { width: 13px; height: 13px; }
 .faq { border-top: 1.5px solid var(--ink); }
 .faq__i { border-bottom: 1px solid var(--line); }
@@ -1018,7 +1018,7 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .q4__i::before { content: ''; position: absolute; inset: 0 0 0 -20px; background: var(--paper); opacity: 0; transition: opacity .25s; z-index: -1; }
 .q4__i:nth-child(2n)::before { inset: 0 -20px 0 0; }
 .q4__i:hover::before { opacity: 1; }
-.q4__give { flex: 1; max-width: none; align-content: start; width: 100%; box-sizing: border-box; min-height: 190px; }
+.q4__give { flex: 1; max-width: none; align-content: start; width: 100%; box-sizing: border-box; min-height: 220px; }
 /* 상담 전화·메일 가독성 */
 .way__t, .way__v { display: block; }
 .way__t { margin-bottom: 3px; }
