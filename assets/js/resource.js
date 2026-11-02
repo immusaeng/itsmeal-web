@@ -273,6 +273,19 @@ function rsToast(msg, ms) {
 }
 
 function rsBindActions() {
+  document.querySelectorAll('[data-share]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const url = location.origin + location.pathname + '?utm_source=share&utm_medium=button&utm_campaign=' + (document.body.dataset.page || 'resource')
+      const data = { title: document.title, text: '급식 현장에서 바로 쓰는 자료예요.', url }
+      if (navigator.share) {
+        try { await navigator.share(data) } catch (e) { /* 사용자가 공유 창을 닫음 */ }
+        return
+      }
+      try { await navigator.clipboard.writeText(url); rsToast('링크를 복사했습니다. 카톡이나 문자에 붙여 넣으세요.') }
+      catch (e) { rsToast('링크를 복사하지 못했습니다. 주소창의 주소를 공유해 주세요.', 3600) }
+    })
+  })
+
   document.querySelectorAll('[data-print]').forEach(btn => {
     btn.addEventListener('click', () => {
       const kind = btn.dataset.print
@@ -379,6 +392,7 @@ async function rsBuildShot(which) {
       <div class="capFoot">
         <span>진한 칸 = 성수기 · 제철 / 연한 칸 = 조업·유통 기간</span>
         <span>이츠밀 자체 조사·정리 — 급식 현장 기준</span>
+        <span><img class="capQr" src="assets/qr/qr-season.svg" alt=""> itsmeal.co.kr</span>
       </div>`
 
     document.body.appendChild(host)
@@ -403,7 +417,7 @@ async function rsBuildShot(which) {
       ${tips}
       <div class="capFoot">
         <span>이츠밀 자체 조사·정리 — 급식 위생 교육 요약</span>
-        <span>itsmeal.co.kr</span>
+        <span><img class="capQr" src="assets/qr/qr-tips.svg" alt=""> itsmeal.co.kr</span>
       </div>`
     document.body.appendChild(host)
     await new Promise(r => setTimeout(r, 60))
