@@ -1010,3 +1010,17 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .cases__cta a { font-weight: 800; color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 1000px) { .cases { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .cases { grid-template-columns: 1fr; } }
+
+/* ── R5 수정 ───────────────────────────────────────────────────── */
+/* 고민 칸: hover 때 왼쪽 여백이 달라 보이지 않게(배경만 바깥으로 넓힌다), '드리는 것' 박스 높이 통일 */
+.q4__i { position: relative; display: flex; flex-direction: column; isolation: isolate; }
+.q4__i:hover { background: transparent; }
+.q4__i::before { content: ''; position: absolute; inset: 0 0 0 -20px; background: var(--paper); opacity: 0; transition: opacity .25s; z-index: -1; }
+.q4__i:nth-child(2n)::before { inset: 0 -20px 0 0; }
+.q4__i:hover::before { opacity: 1; }
+.q4__give { flex: 1; max-width: none; align-content: start; width: 100%; box-sizing: border-box; min-height: 190px; }
+/* 상담 전화·메일 가독성 */
+.way__t, .way__v { display: block; }
+.way__t { margin-bottom: 3px; }
+.way--main .way__v { line-height: 1.1; }
+.mailHi { font-weight: 800; color: #fff; text-decoration: underline; text-decoration-color: var(--amber); text-underline-offset: 4px; }

@@ -286,7 +286,7 @@ function rsBindActions() {
     })
   })
 
-  document.querySelectorAll('[data-print]').forEach(btn => {
+  document.querySelectorAll('button[data-print]').forEach(btn => {
     btn.addEventListener('click', () => {
       const kind = btn.dataset.print
       if (kind) document.body.dataset.print = kind

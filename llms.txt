@@ -15,7 +15,7 @@
 - [네 가지 약속](https://itsmeal.co.kr/promise): 네 가지 약속의 상세
 - [이달의 식단](https://itsmeal.co.kr/menu): 동원이팜 월간 식단표와 간식 라인업
 - [브랜드 스토리](https://itsmeal.co.kr/story): 이름의 의미와 시작 이야기
-- [카탈로그 · 월간 자료](https://itsmeal.co.kr/archive): 동원이팜 월간 자료(식단표·간식 소개·레시피북)와 식자재 카탈로그
+- [이달의 레시피 · 식단표](https://itsmeal.co.kr/archive): 동원이팜 월간 자료(식단표·간식 소개·레시피북)와 식자재 카탈로그
 - [카탈로그 PDF](https://itsmeal.co.kr/assets/docs/itsmeal-catalog.pdf): 식자재 카탈로그
 - [급식 위생관리 점검표](https://itsmeal.co.kr/resource-hygiene-check): 조리실에서 매일 쓰는 위생관리 점검표(A4 인쇄용)
 - [급식 현장에서 자주 놓치는 위생 10가지](https://itsmeal.co.kr/resource-hygiene-tips): 많이 하는 방식과 바꿀 한 가지를 정리한 게시·교육용 자료

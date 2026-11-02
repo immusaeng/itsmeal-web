@@ -37,7 +37,7 @@ const SITE = {
     },
     { href: '/promise', label: '네 가지 약속', key: 'promise' },
     { href: '/story', label: '브랜드 스토리', key: 'story' },
-    { href: '/archive', label: '카탈로그 · 월간 자료', key: 'archive' },
+    { href: '/archive', label: '이달의 레시피 · 식단표', key: 'archive' },
   ],
 }
 
