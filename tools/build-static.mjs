@@ -38,7 +38,13 @@ const PAGES = {
   '404.html': ['nav', 'foot'],
   'menu.html': ['nav', 'foot', 'm-full', 'm-week', 'm-key', 'wk-board'],
   'archive.html': ['nav', 'foot', 'arc-tabs', 'arc-grid'],
+  'resource-season.html': ['nav', 'foot'],
+  'resource-hygiene-check.html': ['nav', 'foot'],
+  'resource-hygiene-tips.html': ['nav', 'foot'],
 }
+
+// 자료 3장은 내비에서 '카탈로그 · 서류'(archive) 아래로 표시한다
+const NAV_ALIAS = { season: 'archive', check: 'archive', tips: 'archive' }
 
 // ── 데이터 ─────────────────────────────────────────────────────────────────────
 const sandbox = { window: {} }
@@ -154,7 +160,7 @@ for (const [file, names] of Object.entries(PAGES)) {
   const p = path.join(ROOT, file)
   const src = fs.readFileSync(p, 'utf8').split('\r\n').join('\n')
   const page = {
-    active: (src.match(/<body data-page="([^"]*)"/) ?? [])[1] ?? '',
+    active: NAV_ALIAS[(src.match(/<body data-page="([^"]*)"/) ?? [])[1]] ?? (src.match(/<body data-page="([^"]*)"/) ?? [])[1] ?? '',
     dark: /<html[^>]*data-nav-dark="true"/.test(src),
   }
   let out = src
