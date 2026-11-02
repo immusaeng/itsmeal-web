@@ -8,6 +8,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import vm from 'node:vm'
+import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -133,6 +134,20 @@ const GEN = (name, page) => ({
   'arc-grid': cards,
 })[name]()
 
+// ── CSS·JS 주소에 내용 해시(?v=) 붙이기 ─────────────────────────────────────────
+// Cloudflare의 브라우저 캐시(최대 4시간)가 배포 직후 옛 CSS·JS를 붙잡지 않도록, 파일이 바뀌면 주소가 바뀌게 한다.
+// 줄바꿈(CRLF/LF) 차이로 해시가 흔들리지 않게 LF로 맞춰 계산한다.
+const verCache = new Map()
+const ver = rel => {
+  if (!verCache.has(rel)) {
+    const text = fs.readFileSync(path.join(ROOT, rel), 'utf8').split('\r\n').join('\n')
+    verCache.set(rel, crypto.createHash('sha1').update(text).digest('hex').slice(0, 8))
+  }
+  return verCache.get(rel)
+}
+const ASSET_REF = /((?:href|src)=")(\/?)(assets\/(?:css|js)\/[^"?#]+)(\?v=[^"]*)?(")/g
+const versionAssets = html => html.replace(ASSET_REF, (_m, a, slash, rel, _q, z) => `${a}${slash}${rel}?v=${ver(rel)}${z}`)
+
 // ── 실행 ───────────────────────────────────────────────────────────────────────
 let bad = 0
 for (const [file, names] of Object.entries(PAGES)) {
@@ -148,6 +163,7 @@ for (const [file, names] of Object.entries(PAGES)) {
     if (!re.test(out)) throw new Error(`${file}: 표식 <!--gen:${name}--> 없음`)
     out = out.replace(re, () => `<!--gen:${name}-->${GEN(name, page)}<!--/gen:${name}-->`)
   }
+  out = versionAssets(out)
   if (out !== src) {
     if (CHECK) { console.log(`변경 필요: ${file}`); bad++ } else { fs.writeFileSync(p, out); console.log(`갱신: ${file}`) }
   }

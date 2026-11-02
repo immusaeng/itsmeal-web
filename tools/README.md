@@ -10,6 +10,7 @@ node tools/build-static.mjs --check    # 생성 결과와 파일이 다르면 �
 ```
 
 ## 언제 실행하나
+- **CSS·JS 파일(`assets/css/*`, `assets/js/*`)을 고친 뒤에도 실행한다.** 스크립트가 각 HTML의 `<link>`·`<script>` 주소 끝 `?v=`를 파일 내용 해시로 갱신한다(Cloudflare 브라우저 캐시가 4시간이라 이 값이 바뀌어야 방문자가 새 파일을 받는다). `--check`가 실패하면 이 갱신이 빠진 것이다.
 - `assets/data/dw-months.js`를 고친 뒤(새 달 추가, 간식명 수정, `current` 이동, 자료 카드 추가)
 - 내비 항목·푸터·문의처를 바꿀 때(스크립트 안 `SITE`와 템플릿)
 
