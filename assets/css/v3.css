@@ -965,3 +965,9 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .hero3 h1 { font-size: clamp(27px, 3.7vw, 54px); max-width: none; }
 .hero3 h1 .ln { white-space: nowrap; }
 @media (max-width: 940px) { .hero3 h1 { font-size: clamp(27px, 7.4vw, 44px); } }
+
+/* 브랜드 띠: 로고(BI) 흐름 — 높이를 맞추고 박스는 없앤다 */
+.marquee__track { gap: 0; padding: 0; }
+.marquee__track li { min-width: 0; height: 64px; padding: 0 clamp(22px, 2.6vw, 40px); border: 0; border-radius: 0; background: none; }
+.marquee__track li img { height: 40px; width: auto; max-width: 150px; object-fit: contain; display: block; }
+.marquee__track li.is-txt { font-size: 24px; font-weight: 800; letter-spacing: -.04em; color: var(--ink-soft); }
