@@ -63,7 +63,7 @@
       </div>
       <p class="secHead__a" data-reveal style="--d:140ms">
         한 칸에 하루가 들어갑니다. 오전 간식 → 점심(밥·국·찬 4) → 오후 간식 순서입니다.
-        간식 품목은 동원이팜 상품코드와 함께 적어 두었으니 발주에 그대로 쓰실 수 있습니다.
+        간식은 동원이팜 11월 간식 식단표 기준이고, 점심은 구성 예시입니다.
       </p>
     </div>
 
@@ -79,7 +79,7 @@
     </div>
 
     <p class="small" data-reveal style="margin-top:18px;max-width:70ch">
-      표는 예시이며, 실제 식단은 시설 협의에 따라 조정됩니다.
+      오전·오후 간식은 동원이팜 11월 간식 식단표 그대로이고, 점심(밥·국·찬)은 구성을 보여 드리기 위한 예시입니다. 실제 식단은 시설 협의에 따라 조정됩니다.
       알레르기 유발 식품은 사전에 안내해 드립니다.
     </p>
   </div>
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '<div class="wk__d"><b>' + DAY[row.d] + '요일</b><span>' + row.d + '</span></div>' +
       '<div class="wk__slot"><span class="wk__k">오전 간식</span><span class="wk__sn">' + row.am + '</span>' +
         (code[row.am] ? '<span class="wk__code">' + code[row.am] + '</span>' : '') + '</div>' +
-      '<div class="wk__slot wk__main"><span class="wk__k">점심</span>' +
+      '<div class="wk__slot wk__main"><span class="wk__k">점심 · 예시</span>' +
         '<div class="wk__rice">' + row.rice + '</div><div class="wk__soup">' + row.soup + '</div>' +
         '<div class="wk__side">' + sides.map(s => '<span>' + s + '</span>').join('') + '</div></div>' +
       '<div class="wk__slot"><span class="wk__k">오후 간식</span><span class="wk__sn">' + row.pm + '</span></div>' +
