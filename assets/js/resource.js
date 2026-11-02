@@ -391,7 +391,7 @@ async function rsBuildShot(which) {
       </table>
       <div class="capFoot">
         <span>진한 칸 = 성수기 · 제철 / 연한 칸 = 조업·유통 기간</span>
-        <span>이츠밀 자체 조사·정리 — 급식 현장 기준</span>
+        <span>산지·출하 정보는 여러 공개 자료를 바탕으로 이츠밀이 가공·정리했습니다. 해마다 기상에 따라 달라지니 실제 발주 전 그해 작황과 시세를 함께 보세요.</span>
         <span><img class="capQr" src="assets/qr/qr-season.svg" alt=""> itsmeal.co.kr</span>
       </div>`
 
@@ -406,7 +406,7 @@ async function rsBuildShot(which) {
       <div class="capHead">
         <div>
           <h3>현장에서 자주 틀리는 위생 10가지</h3>
-          <p>지도점검에서 반복해서 지적되는 항목만 골랐습니다. 잘못된 예와 바꿔야 할 한 가지를 나란히 두었습니다.</p>
+          <p>현장에서 놓치기 쉬운 항목만 골랐습니다. 잘못된 예와 바꿔야 할 한 가지를 나란히 두었습니다.</p>
         </div>
         <div class="capHead__side">
           <img src="assets/logos/mil2-navy.svg" alt="이츠밀">
@@ -416,7 +416,7 @@ async function rsBuildShot(which) {
       </div>
       ${tips}
       <div class="capFoot">
-        <span>이츠밀 자체 조사·정리 — 급식 위생 교육 요약</span>
+        <span>이츠밀 정리 — 급식 위생 교육 요약</span>
         <span><img class="capQr" src="assets/qr/qr-tips.svg" alt=""> itsmeal.co.kr</span>
       </div>`
     document.body.appendChild(host)
