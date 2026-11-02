@@ -29,10 +29,10 @@ const SITE = {
     {
       href: '/resources', label: '급식 자료실', key: 'resources',
       children: [
-        { href: '/resource-season', label: '제철 도감', desc: '이달에 쓰기 좋은 채소·수산물' },
-        { href: '/resource-hygiene-check', label: '위생관리 점검표', desc: 'A4 한 장, 매일 쓰는 점검표' },
-        { href: '/resource-hygiene-tips', label: '자주 놓치는 위생 10가지', desc: '신규 조리원 교육용' },
-        { href: '/menu', label: '이달의 식단', desc: '동원이팜 식단표·간식 라인업' },
+        { href: '/resource-season', label: '제철 도감', desc: '식단 짜기 전, 이번 달 제철 확인' },
+        { href: '/resource-hygiene-check', label: '위생관리 점검표', desc: '출력해서 매일 체크하는 A4 한 장' },
+        { href: '/resource-hygiene-tips', label: '자주 놓치는 위생 10가지', desc: '조리실 게시 · 신규 조리원 교육용' },
+        { href: '/menu', label: '이달의 식단', desc: '월~금 간식 식단표와 구성 예시' },
       ],
     },
     { href: '/promise', label: '네 가지 약속', key: 'promise' },
