@@ -88,7 +88,7 @@ function buildFoot() {
       </div>
       <div class="foot__bar">
         <span>이츠밀 · it's meal &nbsp;|&nbsp; 동원홈푸드 공식 파트너</span>
-        <span>© 2026 Eats Mil. All rights reserved.</span>
+        <span><a href="/privacy">개인정보 처리방침</a> &nbsp;|&nbsp; © 2026 Eats Mil. All rights reserved.</span>
       </div>
     </div>`
 }
