@@ -942,3 +942,15 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .dir__d { font-size: 15.5px; line-height: 1.65; color: var(--ink-soft); overflow: visible; white-space: normal; }
 .moreRow { display: flex; justify-content: center; margin-top: 28px; }
 .moreRow[hidden] { display: none; }
+
+/* ── 브랜드 띠: 같은 크기 라벨이 흐른다 ───────────────────────────── */
+.brandBand { padding: clamp(28px, 4vw, 48px) 0; background: var(--paper); border-block: 1px solid var(--line-soft); overflow: hidden; }
+.brandBand__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-bottom: 20px; }
+.brandBand__k { font-size: 12px; font-weight: 800; letter-spacing: .16em; color: var(--green); }
+.brandBand__t { margin: 0; font-family: var(--serif); font-size: clamp(18px, 2vw, 24px); font-weight: 600; letter-spacing: -.03em; color: var(--ink); }
+.marquee { display: flex; width: max-content; animation: marquee 60s linear infinite; }
+.marquee:hover { animation-play-state: paused; }
+.marquee__track { display: flex; flex: none; gap: 14px; margin: 0; padding: 0 7px; list-style: none; }
+.marquee__track li { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 150px; height: 56px; padding: 0 26px; border: 1px solid var(--line); border-radius: 999px; background: var(--ivory); font-size: 19px; font-weight: 800; letter-spacing: -.03em; color: var(--ink-soft); white-space: nowrap; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee { animation: none; width: auto; overflow-x: auto; } .marquee__track[aria-hidden] { display: none; } }
