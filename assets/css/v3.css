@@ -857,3 +857,52 @@ a.dirRow:hover .dir__t { color: var(--green); }
 
 /* 푸터 사업자 표기 */
 .foot__biz { margin: 0; padding-top: 22px; font-size: 13px; line-height: 1.7; color: rgba(250,248,243,.62); }
+
+/* ── B R3: 내비 위계(로고·간격·현장 자료 드롭다운), 히어로 숫자·파트너 배지 ──────────── */
+:root { --nav-h: 84px; }
+.nav__logo img { height: 40px; }
+.nav__menu { gap: clamp(22px, 3vw, 46px); font-size: 16px; }
+.nav__menu a, .nav__ddT { opacity: .86; }
+.nav__dd { position: relative; display: flex; align-items: center; }
+.nav__ddT { display: inline-flex; align-items: center; gap: 6px; position: relative; padding-block: 6px; font-weight: 800; color: var(--green-deep); opacity: 1; white-space: nowrap; }
+.nav.is-dark:not(.is-solid) .nav__ddT { color: var(--ivory); }
+.nav__ddT::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+.nav__chev { width: 11px; height: 11px; transition: transform .3s var(--ease-out); }
+.nav__dd:hover .nav__chev, .nav__dd:focus-within .nav__chev { transform: rotate(180deg); }
+.nav__ddM {
+  position: absolute; top: 100%; left: -18px; min-width: 300px; padding: 10px;
+  display: grid; gap: 2px;
+  background: var(--paper); color: var(--ink); border: 1px solid var(--line-soft); border-radius: 14px;
+  box-shadow: 0 30px 50px -28px rgba(20, 37, 28, .45);
+  opacity: 0; visibility: hidden; transform: translateY(6px);
+  transition: opacity .25s var(--ease-out), transform .3s var(--ease-out), visibility 0s linear .25s;
+}
+.nav__dd:hover .nav__ddM, .nav__dd:focus-within .nav__ddM { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.nav__ddM::before { content: ''; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+.nav__menu .nav__ddM a { display: grid; gap: 2px; padding: 11px 14px; border-radius: 9px; opacity: 1; white-space: normal; }
+.nav__menu .nav__ddM a::after { display: none; }
+.nav__menu .nav__ddM a:hover { background: var(--ivory-warm, #F4F0E7); }
+.nav__ddM b { font-size: 15px; font-weight: 800; letter-spacing: -.02em; }
+.nav__ddM span { font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.navSheet__h { padding: 16px 0 4px; font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--green); }
+.navSheet a.navSheet__c { padding-left: 14px; font-size: 18px; }
+
+/* 히어로: 상단 태그가 내비 밑으로 내려오게, 숫자는 크게(2×2), 파트너 배지는 한 덩어리로 */
+.hero3__tag { top: calc(var(--nav-h) + 10px); }
+.hero3__facts { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2vw, 26px) 0; }
+.hero3__fact { gap: 7px; padding: 0 14px 0 0; }
+.hero3__fact + .hero3__fact { border-left: 0; padding-left: 0; }
+.hero3__fact:nth-child(even) { padding-left: clamp(14px, 2vw, 26px); border-left: 1px solid var(--line-soft); }
+.hero3__v { font-size: clamp(30px, 3.5vw, 48px); }
+.hero3__k { font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); }
+.hero3__copy > .partner { padding: 10px 20px 10px 16px; gap: 12px; background: var(--green-mist); border: 0; }
+.hero3__copy > .partner img { height: 28px; width: auto; }
+.hero3__copy > .partner .partner__txt { font-size: 15px; font-weight: 800; color: var(--green-deep); letter-spacing: -.01em; }
+.foot__tel { font-size: 1.2em; font-weight: 800; }
+@media (max-width: 940px) { .nav__dd { display: none; } .hero3__tag { top: 16px; } :root { --nav-h: 72px; } .nav__logo img { height: 34px; } }
+/* 히어로 사진은 내비 아래에서 시작(메뉴와 겹치지 않게) */
+.hero3__photo { margin-top: calc(var(--nav-h) + 2px); }
+@media (max-width: 940px) { .hero3__photo { margin-top: 0; } }
+.way--main .way__v { font-size: clamp(26px, 3vw, 34px); letter-spacing: -.02em; }
+.way--main .way__t { font-size: 14px; color: rgba(250,248,243,.78); }
+.way--sub .way__v { font-size: 17px; opacity: .9; }

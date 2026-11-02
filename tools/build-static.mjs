@@ -16,16 +16,28 @@ const CHECK = process.argv.includes('--check')
 
 // ── 사이트 공통 값(내비 순서·라벨, 문의처) ─────────────────────────────────────────
 const SITE = {
-  phone: '010-7656-0301',
-  phoneHref: 'tel:01076560301',
+  phone: '010-4811-2944',
+  phoneHref: 'tel:01048112944',
+  phone2: '010-7656-0301',
+  phone2Href: 'tel:01076560301',
   email: 'contact@itsmeal.co.kr',
   // 푸터 사업자 표기(운영자가 공개를 승인한 항목만: 상호·사업자등록번호·영업신고)
   biz: '상호 이츠밀 · 사업자등록번호 193-23-02385 · 영업신고 제2026-0325042호 (식품소분·판매업, 집단급식소 식품판매업)',
+  rep: '대표자 이수현',
+  addr: '전남광주통합특별시 광산구 첨단중앙로124번길',
   nav: [
+    {
+      href: '/archive#field', label: '현장 자료', key: 'resources',
+      children: [
+        { href: '/resource-season', label: '제철 도감', desc: '이달에 쓰기 좋은 채소·수산물' },
+        { href: '/resource-hygiene-check', label: '위생관리 점검표', desc: 'A4 한 장, 매일 쓰는 점검표' },
+        { href: '/resource-hygiene-tips', label: '자주 놓치는 위생 10가지', desc: '신규 조리원 교육용' },
+        { href: '/menu', label: '이달의 식단', desc: '동원이팜 식단표·간식 라인업' },
+      ],
+    },
     { href: '/promise', label: '네 가지 약속', key: 'promise' },
-    { href: '/menu', label: '이달의 식단', key: 'menu' },
     { href: '/story', label: '브랜드 스토리', key: 'story' },
-    { href: '/archive', label: '카탈로그 · 서류', key: 'archive' },
+    { href: '/archive', label: '카탈로그 · 월간 자료', key: 'archive' },
   ],
 }
 
@@ -43,8 +55,8 @@ const PAGES = {
   'resource-hygiene-tips.html': ['nav', 'foot'],
 }
 
-// 자료 3장은 내비에서 '카탈로그 · 서류'(archive) 아래로 표시한다
-const NAV_ALIAS = { season: 'archive', check: 'archive', tips: 'archive' }
+// 자료 3장과 이달의 식단은 내비의 '현장 자료'(resources)로 표시한다
+const NAV_ALIAS = { season: 'resources', check: 'resources', tips: 'resources', menu: 'resources' }
 
 // ── 데이터 ─────────────────────────────────────────────────────────────────────
 const sandbox = { window: {} }
@@ -79,6 +91,14 @@ const sBody = kind => (kind === 'veg' ? SEASON.vegGroups : SEASON.seaGroups).map
 }).join('')
 
 // ── 템플릿 ─────────────────────────────────────────────────────────────────────
+const chev = '<svg class="nav__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 4.5 3 3 3-3"/></svg>'
+const navItem = (n, active) => n.children
+  ? `<div class="nav__dd"><a href="${n.href}" class="nav__ddT${active === n.key ? ' is-active' : ''}">${n.label}${chev}</a><div class="nav__ddM">${n.children.map(c => `<a href="${c.href}"><b>${c.label}</b><span>${c.desc}</span></a>`).join('')}</div></div>`
+  : `<a href="${n.href}" class="${active === n.key ? 'is-active' : ''}">${n.label}</a>`
+const sheetItems = () => SITE.nav.map(n => n.children
+  ? `<span class="navSheet__h">${n.label}</span>${n.children.map(c => `<a class="navSheet__c" href="${c.href}">${c.label}</a>`).join('')}`
+  : `<a href="${n.href}">${n.label}</a>`).join('')
+const flatNav = () => SITE.nav.flatMap(n => n.children ? n.children : [n])
 const nav = (active, dark) => `
 <header class="nav${dark ? ' is-dark' : ''}" id="siteNav">
   <div class="nav__in">
@@ -86,12 +106,12 @@ const nav = (active, dark) => `
       <img class="logo-navy" src="/assets/logos/mil2-navy.svg" alt="이츠밀">
       <img class="logo-white" src="/assets/logos/mil2-white.svg" alt="" aria-hidden="true">
     </a>
-    <nav class="nav__menu">${SITE.nav.map(n => `<a href="${n.href}" class="${active === n.key ? 'is-active' : ''}">${n.label}</a>`).join('')}</nav>
+    <nav class="nav__menu">${SITE.nav.map(n => navItem(n, active)).join('')}</nav>
     <a class="nav__cta" href="/#contact">상담 신청 ${arrow}</a>
     <button class="nav__burger" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
   </div>
 </header>
-<div class="navSheet">${SITE.nav.map(n => `<a href="${n.href}">${n.label}</a>`).join('')}<a href="/#contact">상담 신청</a></div>
+<div class="navSheet">${sheetItems()}<a href="/#contact">상담 신청</a></div>
 `
 
 const foot = () => `
@@ -105,20 +125,21 @@ const foot = () => `
       <div>
         <h5>바로가기</h5>
         <ul>
-          ${SITE.nav.map(n => `<li><a href="${n.href}">${n.label}</a></li>`).join('\n          ')}
+          ${flatNav().map(n => `<li><a href="${n.href}">${n.label}</a></li>`).join('\n          ')}
           <li><a href="/#contact">상담 · 견적 신청</a></li>
         </ul>
       </div>
       <div>
         <h5>문의</h5>
         <ul>
-          <li><a href="${SITE.phoneHref}">${SITE.phone}</a></li>
+          <li><a class="foot__tel" href="${SITE.phoneHref}">${SITE.phone}</a></li>
+          <li><a href="${SITE.phone2Href}">${SITE.phone2}</a></li>
           <li><!--email_off--><a href="mailto:${SITE.email}">${SITE.email}</a><!--/email_off--></li>
           <li>평일 09:00 – 18:00</li>
         </ul>
       </div>
     </div>
-    <p class="foot__biz">${SITE.biz}</p>
+    <p class="foot__biz">${SITE.biz}<br>${SITE.rep} · ${SITE.addr}</p>
     <div class="foot__bar">
       <span>이츠밀 · it's meal &nbsp;|&nbsp; 동원홈푸드 공식 파트너</span>
       <span><a href="/privacy">개인정보 처리방침</a> &nbsp;|&nbsp; © 2026 it's meal. All rights reserved.</span>
