@@ -227,6 +227,12 @@ function initHeroLoad() {
 
 /* ── 부팅 ──────────────────────────────────────────────────────────── */
 /* ── 모바일 하단 바: 상담 폼이 화면에 있으면 숨기고, 현재 지면 표시 ─────── */
+/* ── 추천 식단 제목의 '월'은 방문한 달로 맞춘다(식단표 내용은 동원이팜 자료가 오면 직접 갱신) ── */
+function initMonthLabel() {
+  const m = new Date().getMonth() + 1 + '월'
+  document.querySelectorAll('[data-month-label]').forEach(el => { el.textContent = m })
+}
+
 function initMbar() {
   const bar = document.getElementById('mbar')
   if (!bar) return
@@ -240,6 +246,7 @@ function initMbar() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initMbar()
+  initMonthLabel()
   const nav = initNav()
   if (nav) initNavState(nav)
   initReveal()

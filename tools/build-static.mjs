@@ -181,10 +181,10 @@ const [yy, mm] = cur.id.split('-')
 const GEN = (name, page) => ({
   nav: () => nav(page.active, page.dark),
   foot,
-  'home-float': () => `${cur.label} 식단표 보기`,
+  'home-float': () => `<span data-month-label>${cur.label}</span> 추천 식단 보기`,
   'm-full': () => `${cur.full} 기준`,
-  'm-week': () => `${cur.label} ${cur.weekLabel ?? ''}`.trim(),
-  'm-key': () => `Week 1 — ${yy}. ${Number(mm)}.`,
+  'm-week': () => `<span data-month-label>${cur.label}</span> 추천 식단`,
+  'm-key': () => 'Recommended Menu',
   'wk-board': board,
   'season-veg': () => sBody('veg'),
   'season-sea': () => sBody('sea'),
