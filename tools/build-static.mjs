@@ -85,7 +85,7 @@ const foot = () => `
         <h5>문의</h5>
         <ul>
           <li><a href="${SITE.phoneHref}">${SITE.phone}</a></li>
-          <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
+          <li><!--email_off--><a href="mailto:${SITE.email}">${SITE.email}</a><!--/email_off--></li>
           <li>평일 09:00 – 18:00</li>
         </ul>
       </div>
