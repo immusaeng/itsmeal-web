@@ -391,7 +391,7 @@ async function rsBuildShot(which) {
       </table>
       <div class="capFoot">
         <span>진한 칸 = 성수기 · 제철 / 연한 칸 = 조업·유통 기간</span>
-        <span>이츠밀 자체 조사·정리 — 급식 현장 기준</span>
+        <span>이츠밀이 자체 조사·정리했습니다. 해마다 기상에 따라 달라지니 실제 발주 전 그해 작황과 시세를 함께 보세요.</span>
         <span><img class="capQr" src="assets/qr/qr-season.svg" alt=""> itsmeal.co.kr</span>
       </div>`
 
