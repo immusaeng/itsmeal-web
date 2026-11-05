@@ -1023,7 +1023,7 @@ a.dirRow:hover .dir__t { color: var(--green); }
 .way__t, .way__v { display: block; }
 .way__t { margin-bottom: 3px; }
 .way--main .way__v { line-height: 1.1; }
-.mailHi { font-weight: 800; color: #fff; text-decoration: underline; text-decoration-color: var(--amber); text-underline-offset: 4px; }
+.mailHi { font-weight: 800; color: var(--ink); text-decoration: underline; text-decoration-color: var(--amber); text-underline-offset: 4px; }
 
 /* 소개해 주신 분 안내 */
 .refNote{display:block;margin-top:6px;font-size:13px;line-height:1.55;color:var(--muted)}
