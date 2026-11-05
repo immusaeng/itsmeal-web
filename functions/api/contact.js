@@ -26,6 +26,9 @@ export async function onRequestPost({ request, env }) {
     size: clean(b.size, 30),
     memo: clean(b.memo, 2000),
   }
+  // 소개해 주신 분: 스키마 변경(마이그레이션) 없이 문의 내용 맨 앞에 붙여 저장한다.
+  const ref = clean(b.ref, 100)
+  if (ref) f.memo = `[소개해 주신 분] ${ref}\n${f.memo}`.trim()
   if (!f.org || f.phone.replace(/\D/g, '').length < 9 || b.consent !== 'y') return json({ error: 'invalid' }, 422)
 
   // 같은 IP에서 10분에 5건 초과 차단. IP 원문은 저장하지 않고 해시만 둔다.
@@ -54,6 +57,7 @@ export async function onRequestPost({ request, env }) {
             <tr><td><b>담당자</b></td><td>${esc(f.name)}</td></tr>
             <tr><td><b>연락처</b></td><td>${esc(f.phone)}</td></tr>
             <tr><td><b>시설 규모</b></td><td>${esc(f.size)}</td></tr>
+            ${ref ? `<tr><td><b>소개해 주신 분</b></td><td style="background:#fff3cd">${esc(ref)}</td></tr>` : ''}
             <tr><td valign="top"><b>문의 내용</b></td><td>${esc(f.memo).replace(/\n/g, '<br>')}</td></tr></table>`,
         }),
       })

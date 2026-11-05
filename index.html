@@ -72,7 +72,7 @@
 <link rel="stylesheet" href="assets/css/home.css?v=a015efe0">
 <link rel="stylesheet" href="assets/css/cine.css?v=6cdbda81">
 <link rel="stylesheet" href="assets/css/sub.css?v=0b7fb41f">
-<link rel="stylesheet" href="assets/css/v3.css?v=3c5ce795">
+<link rel="stylesheet" href="assets/css/v3.css?v=22fc63b1">
 </head>
 <body data-page="home">
 <!--gen:nav-->
@@ -464,12 +464,16 @@
               </select>
             </div>
           </div>
+          <label class="field"><span>소개해 주신 분 <i class="opt">(선택)</i></span>
+            <input name="ref" type="text" maxlength="100" placeholder="예) 햇살어린이집 또는 김○○ 원장님">
+            <small class="refNote">이츠밀을 소개해 주신 센터나 분이 계시면 적어 주세요. 감사의 선물을 드립니다. 조건은 상담 시 안내해 드립니다.</small>
+          </label>
           <label class="field"><span>문의 내용 <i class="opt">(선택)</i></span>
             <textarea name="memo" placeholder="예) 현재 납품처, 불편한 점, 하루 급식 인원을 적어 주세요."></textarea>
           </label>
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
           <label class="consent"><input type="checkbox" name="consent" value="y" required> <span>[필수] 상담을 위한 개인정보 수집·이용에 동의합니다.</span></label>
-          <details class="consentMore"><summary>자세히 보기</summary><p>수집 항목: 필수(시설명·연락처), 선택(성함·급식 인원·문의 내용). 상담 종료 후 1년간 보관한 뒤 파기합니다. 입력하신 정보는 Cloudflare·Resend(미국)의 서비스로 저장·전달되며, 이 과정에서 국외 이전이 이루어집니다. 동의하지 않으셔도 전화로 상담하실 수 있습니다. 자세한 내용은 <a href="/privacy" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">개인정보 처리방침</a>에서 확인하세요.</p></details>
+          <details class="consentMore"><summary>자세히 보기</summary><p>수집 항목: 필수(시설명·연락처), 선택(성함·급식 인원·소개해 주신 분의 센터명 또는 성함·문의 내용). 상담 종료 후 1년간 보관한 뒤 파기합니다. 입력하신 정보는 Cloudflare·Resend(미국)의 서비스로 저장·전달되며, 이 과정에서 국외 이전이 이루어집니다. 동의하지 않으셔도 전화로 상담하실 수 있습니다. 자세한 내용은 <a href="/privacy" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">개인정보 처리방침</a>에서 확인하세요.</p></details>
           <p class="formNote" id="formMsg" role="alert" style="color:var(--err)"></p>
           <button class="btn btn--primary" type="submit">신청하기</button>
         </div>
