@@ -308,7 +308,7 @@ function rsBindActions() {
           pixelRatio: 2,
           width,
           backgroundColor: '#FAF8F3',
-          style: { transform: 'none' },
+          style: node.id === 'capHost' ? { transform: 'none', position: 'static', left: '0', top: '0' } : { transform: 'none' }, // 화면 밖(left:-12000px) 위치가 복제본에 따라가 빈 이미지가 되는 문제 방지
         })
         const a = document.createElement('a')
         a.href = dataUrl
