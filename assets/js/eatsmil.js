@@ -188,8 +188,8 @@ function initMotion() {
   })
 
   // 히어로 스케일 아웃
-  const hero = document.querySelector('[data-hero-media]')
-  if (hero) {
+  const hero = document.querySelectorAll('[data-hero-media]')
+  if (hero.length) {
     gsap.to(hero, {
       scale: 1.12, yPercent: 6, ease: 'none',
       scrollTrigger: { trigger: document.querySelector('[data-hero]'), start: 'top top', end: 'bottom top', scrub: true },
@@ -228,6 +228,20 @@ function initHeroLoad() {
 /* ── 부팅 ──────────────────────────────────────────────────────────── */
 /* ── 모바일 하단 바: 상담 폼이 화면에 있으면 숨기고, 현재 지면 표시 ─────── */
 /* ── 추천 식단 제목의 '월'은 방문한 달로 맞춘다(식단표 내용은 동원이팜 자료가 오면 직접 갱신) ── */
+// 히어로 영상(선택): 파일이 없거나 느린 환경·모션 줄이기 설정이면 사진만 보여 준다.
+function initHeroVideo() {
+  const v = document.querySelector('[data-hero-video]')
+  if (!v) return
+  const c = navigator.connection || {}
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || c.saveData || /(^|-)[23]g$/.test(c.effectiveType || '')) return v.remove()
+  v.addEventListener('error', () => v.remove(), { once: true })
+  v.addEventListener('playing', () => v.classList.add('is-on'), { once: true })
+  v.src = v.dataset.src
+  v.play().catch(() => v.remove())
+  // 화면 밖이면 멈춰서 배터리·데이터를 아낀다
+  new IntersectionObserver(([e]) => { e.isIntersecting ? v.play().catch(() => {}) : v.pause() }).observe(v)
+}
+
 function initMonthLabel() {
   const m = new Date().getMonth() + 1 + '월'
   document.querySelectorAll('[data-month-label]').forEach(el => { el.textContent = m })
@@ -247,6 +261,7 @@ function initMbar() {
 document.addEventListener('DOMContentLoaded', () => {
   initMbar()
   initMonthLabel()
+  initHeroVideo()
   const nav = initNav()
   if (nav) initNavState(nav)
   initReveal()
