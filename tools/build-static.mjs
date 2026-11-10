@@ -33,6 +33,7 @@ const SITE = {
         { href: '/resource-hygiene-check', label: '위생관리 점검표', desc: '출력해서 매일 체크하는 A4 한 장' },
         { href: '/resource-hygiene-tips', label: '자주 놓치는 위생 10가지', desc: '조리실 게시 · 신규 조리원 교육용' },
         { href: '/menu', label: '이달의 식단', desc: '월~금 간식 식단표와 구성 예시' },
+        { href: '/resource-inspection', label: '지도점검 서류 목록', desc: '점검 전에 챙길 급식 서류 확인' },
       ],
     },
     { href: '/promise', label: '네 가지 약속', key: 'promise' },
@@ -54,10 +55,11 @@ const PAGES = {
   'resource-season.html': ['nav', 'foot', 'season-veg', 'season-sea'],
   'resource-hygiene-check.html': ['nav', 'foot'],
   'resource-hygiene-tips.html': ['nav', 'foot'],
+  'resource-inspection.html': ['nav', 'foot'],
 }
 
 // 자료 3장과 이달의 식단은 내비의 '현장 자료'(resources)로 표시한다
-const NAV_ALIAS = { season: 'resources', check: 'resources', tips: 'resources', menu: 'resources' }
+const NAV_ALIAS = { season: 'resources', check: 'resources', tips: 'resources', menu: 'resources', inspection: 'resources' }
 
 // ── 데이터 ─────────────────────────────────────────────────────────────────────
 const sandbox = { window: {} }
