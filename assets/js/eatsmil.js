@@ -236,6 +236,8 @@ function initHeroVideo() {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || c.saveData || /(^|-)[23]g$/.test(c.effectiveType || '')) return v.remove()
   v.addEventListener('error', () => v.remove(), { once: true })
   v.addEventListener('playing', () => v.classList.add('is-on'), { once: true })
+  // 끝 장면이 첫 장면과 달라 반복 때 튀므로, 끝나기 직전에 아래 깔린 사진(=첫 프레임)으로 서서히 되돌린다
+  v.addEventListener('timeupdate', () => { if (v.duration) v.classList.toggle('is-on', v.currentTime < v.duration - 0.9) })
   v.src = v.dataset.src
   v.play().catch(() => v.remove())
   // 화면 밖이면 멈춰서 배터리·데이터를 아낀다
