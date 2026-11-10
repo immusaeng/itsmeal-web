@@ -17,9 +17,10 @@
   window.gaEvent = function (name, params) { gtag('event', name, Object.assign({ loc: page() }, params || {})) }
 
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('a[href^="tel:"], a[href^="mailto:"], button[data-print], [data-png]')
+    var t = e.target.closest('[data-ga], a[href^="tel:"], a[href^="mailto:"], button[data-print], [data-png]')
     if (!t) return
-    if (t.matches('a[href^="tel:"]')) window.gaEvent('click_tel')
+    if (t.dataset.ga) window.gaEvent(t.dataset.ga)
+    else if (t.matches('a[href^="tel:"]')) window.gaEvent('click_tel')
     else if (t.matches('a[href^="mailto:"]')) window.gaEvent('click_email')
     else if (t.matches('button[data-print]')) window.gaEvent('resource_print', { resource: page() })
     else window.gaEvent('resource_png', { resource: page() })
