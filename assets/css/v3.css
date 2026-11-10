@@ -1082,3 +1082,7 @@ a.dirRow:hover .dir__t { color: var(--green); }
 
 /* home.css를 안 쓰는 자료실 페이지에서 흰 로고가 같이 보이던 문제 */
 .nav__logo .logo-white { display: none; }
+
+/* FAQ 강조 문항 */
+.faq__i--hl { background: #FFF1D6; border-radius: 12px; border-bottom-color: transparent; padding-inline: 14px; margin-block: 6px; }
+.faq__i--hl p b { color: var(--green-deep); }

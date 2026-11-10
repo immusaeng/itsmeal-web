@@ -151,7 +151,7 @@ const foot = () => `
     </div>
     <p class="foot__biz">${SITE.biz}<br>${SITE.rep} · ${SITE.addr}</p>
     <div class="foot__bar">
-      <span>이츠밀 · it's meal &nbsp;|&nbsp; 동원홈푸드 공식 파트너 · 여성 대표 기업</span>
+      <span>이츠밀 · it's meal &nbsp;|&nbsp; 동원홈푸드 공식 파트너 · 여성기업 확인 기업</span>
       <span><a href="/privacy">개인정보 처리방침</a> &nbsp;|&nbsp; © 2026 it's meal. All rights reserved.</span>
     </div>
   </div>
