@@ -29,6 +29,9 @@ export async function onRequestPost({ request, env }) {
   // 소개해 주신 분: 스키마 변경(마이그레이션) 없이 문의 내용 맨 앞에 붙여 저장한다.
   const ref = clean(b.ref, 100)
   if (ref) f.memo = `[소개해 주신 분] ${ref}\n${f.memo}`.trim()
+  // /care(어르신 시설) 페이지에서 넘어온 문의 표시
+  const care = b.src === 'care'
+  if (care) f.memo = `[노인시설 문의]\n${f.memo}`.trim()
   if (!f.org || f.phone.replace(/\D/g, '').length < 9 || b.consent !== 'y') return json({ error: 'invalid' }, 422)
 
   // 같은 IP에서 10분에 5건 초과 차단. IP 원문은 저장하지 않고 해시만 둔다.
@@ -51,7 +54,7 @@ export async function onRequestPost({ request, env }) {
         body: JSON.stringify({
           from: env.CONTACT_FROM,
           to: env.CONTACT_TO.split(',').map(s => s.trim()),
-          subject: `[이츠밀 상담 신청] ${f.org} · ${f.phone}`,
+          subject: `[이츠밀 상담 신청${care ? ' · 노인시설' : ''}] ${f.org} · ${f.phone}`,
           html: `<table cellpadding="6" style="font:14px/1.6 sans-serif">
             <tr><td><b>시설명</b></td><td>${esc(f.org)}</td></tr>
             <tr><td><b>담당자</b></td><td>${esc(f.name)}</td></tr>
